@@ -15,7 +15,7 @@ import {
   Badge,
   Button,
   Progress,
-  BranchedMenu,
+  studentNavBranches,
 } from "@learnova/ui";
 import {
   Compass,
@@ -35,44 +35,7 @@ import {
   ChevronRight,
   ShieldCheck,
 } from "lucide-react";
-import {
-  Rocket01Icon,
-  PaintBoardIcon,
-  Layers01Icon,
-  Settings02Icon,
-  Download04Icon,
-} from "@hugeicons/core-free-icons";
-
 export default function StudentLearningHubPage() {
-  const [activeTrack, setActiveTrack] = useState("physics-101");
-
-  const navItems = [
-    { label: "Learning Hub", href: "/", icon: <Compass className="h-4 w-4" />, active: true },
-    { label: "My Courses", href: "/courses", icon: <BookOpen className="h-4 w-4" />, badge: 4 },
-    { label: "Learning Path", href: "/learning-path", icon: <Route className="h-4 w-4" />, badge: "Unit 3" },
-    { label: "Focus Study (AI)", href: "/study", icon: <BookMarked className="h-4 w-4" />, badge: "Active" },
-    { label: "Focus Practice", href: "/practice", icon: <Play className="h-4 w-4" /> },
-    { label: "Progress & Radar", href: "/analytics", icon: <Award className="h-4 w-4" />, badge: "77%" },
-  ];
-
-  const curriculumBranches = [
-    {
-      label: "Active Learning Tracks",
-      children: [
-        { value: "physics-101", label: "AP Physics: Mechanics", icon: Rocket01Icon },
-        { value: "nextjs-14", label: "Fullstack Systems", icon: Layers01Icon },
-        { value: "design-systems", label: "Design Systems & UI", icon: PaintBoardIcon },
-      ],
-    },
-    {
-      label: "Study Resources",
-      children: [
-        { value: "formula-sheet", label: "AP Physics Formula Sheet", icon: Download04Icon },
-        { value: "settings", label: "Study Schedule Settings", icon: Settings02Icon },
-      ],
-    },
-  ];
-
   const enrolledCourses = [
     {
       id: "course-phys",
@@ -130,7 +93,7 @@ export default function StudentLearningHubPage() {
 
       <div className="flex flex-1">
         <Sidebar
-          items={navItems}
+          branches={studentNavBranches}
           currentPath="/"
           footerContent={
             <div className="rounded-xl bg-gradient-to-br from-[#0B2B53] to-slate-900 p-3.5 text-white">
@@ -148,18 +111,7 @@ export default function StudentLearningHubPage() {
               </Link>
             </div>
           }
-        >
-          <div className="space-y-2">
-            <p className="px-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-              Curriculum Tracks
-            </p>
-            <BranchedMenu
-              items={curriculumBranches}
-              defaultActive={activeTrack}
-              onSelect={(val) => setActiveTrack(val)}
-            />
-          </div>
-        </Sidebar>
+        />
 
         <main className="flex-1 p-6 md:p-8 space-y-8 max-w-7xl">
           {/* Welcome Header */}

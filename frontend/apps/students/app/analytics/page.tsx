@@ -15,15 +15,9 @@ import {
   Badge,
   Button,
   mockStudentAnalytics,
+  studentNavBranches,
 } from "@learnova/ui";
 import {
-  Compass,
-  BookOpen,
-  Route,
-  BookMarked,
-  FileText,
-  Award,
-  Play,
   Zap,
   TrendingUp,
   CheckCircle2,
@@ -34,19 +28,11 @@ import {
   Target,
   BarChart3,
   Lock,
+  Award,
 } from "lucide-react";
 
 export default function StudentAnalyticsPage() {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
-
-  const navItems = [
-    { label: "Learning Hub", href: "/", icon: <Compass className="h-4 w-4" /> },
-    { label: "My Courses", href: "/courses", icon: <BookOpen className="h-4 w-4" />, badge: 4 },
-    { label: "Learning Path", href: "/learning-path", icon: <Route className="h-4 w-4" />, badge: "Unit 3" },
-    { label: "Focus Study (AI)", href: "/study", icon: <BookMarked className="h-4 w-4" />, badge: "Active" },
-    { label: "Focus Practice", href: "/practice", icon: <Play className="h-4 w-4" /> },
-    { label: "Progress & Radar", href: "/analytics", icon: <Award className="h-4 w-4" />, active: true, badge: "77%" },
-  ];
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
@@ -63,7 +49,7 @@ export default function StudentAnalyticsPage() {
 
       <div className="flex flex-1">
         <Sidebar
-          items={navItems}
+          branches={studentNavBranches}
           currentPath="/analytics"
           footerContent={
             <div className="rounded-xl bg-slate-900 p-3.5 text-white">

@@ -8,13 +8,9 @@ import {
   Button,
   Badge,
   mockPhysicsCurriculum,
+  teacherNavBranches,
 } from "@learnova/ui";
 import {
-  BarChart3,
-  BookOpen,
-  FileCheck,
-  Users,
-  MessageSquare,
   GripVertical,
   ChevronDown,
   ChevronUp,
@@ -49,14 +45,6 @@ export default function CurriculumBuilderPage() {
     }));
   };
 
-  const navItems = [
-    { label: "Faculty Dashboard", href: "/", icon: <BarChart3 className="h-4 w-4" /> },
-    { label: "Curriculum Builder", href: "/curriculum", icon: <BookOpen className="h-4 w-4" />, active: true, badge: "4 Units" },
-    { label: "Student Mastery Grid", href: "/mastery", icon: <Users className="h-4 w-4" />, badge: "3 Alerts" },
-    { label: "Submissions & Grading", href: "/#grading", icon: <FileCheck className="h-4 w-4" />, badge: 8 },
-    { label: "Discussions", href: "/#discussions", icon: <MessageSquare className="h-4 w-4" /> },
-  ];
-
   const getLessonIcon = (type: string) => {
     switch (type) {
       case "Video Lecture":
@@ -83,7 +71,7 @@ export default function CurriculumBuilderPage() {
 
       <div className="flex flex-1">
         <Sidebar
-          items={navItems}
+          branches={teacherNavBranches}
           currentPath="/curriculum"
           footerContent={
             <div className="rounded-xl bg-slate-900 p-3.5 text-white space-y-2">

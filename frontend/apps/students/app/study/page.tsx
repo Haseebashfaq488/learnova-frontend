@@ -8,14 +8,9 @@ import {
   Button,
   InclineSimulator,
   AIStudyAssistant,
+  studentNavBranches,
 } from "@learnova/ui";
 import {
-  Compass,
-  BookOpen,
-  Route,
-  BookMarked,
-  Play,
-  Award,
   ChevronRight,
   Maximize2,
   Minimize2,
@@ -26,21 +21,13 @@ import {
   CheckCircle2,
   ArrowRight,
   HelpCircle,
+  BookOpen,
 } from "lucide-react";
 
 export default function FocusStudyPage() {
   const [isZenMode, setIsZenMode] = useState(false);
   const [quizAnswer, setQuizAnswer] = useState<string | null>(null);
   const [isCompleted, setIsCompleted] = useState(false);
-
-  const navItems = [
-    { label: "Learning Hub", href: "/", icon: <Compass className="h-4 w-4" /> },
-    { label: "My Courses", href: "/courses", icon: <BookOpen className="h-4 w-4" />, badge: 4 },
-    { label: "Learning Path", href: "/learning-path", icon: <Route className="h-4 w-4" />, badge: "Unit 3" },
-    { label: "Focus Study (AI)", href: "/study", icon: <BookMarked className="h-4 w-4" />, active: true, badge: "Active" },
-    { label: "Focus Practice", href: "/practice", icon: <Play className="h-4 w-4" /> },
-    { label: "Progress & Radar", href: "/analytics", icon: <Award className="h-4 w-4" />, badge: "77%" },
-  ];
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex flex-col font-sans">
@@ -60,7 +47,7 @@ export default function FocusStudyPage() {
       <div className="flex flex-1">
         {!isZenMode && (
           <Sidebar
-            items={navItems}
+            branches={studentNavBranches}
             currentPath="/study"
             footerContent={
               <div className="rounded-xl bg-[#0B2B53] p-3.5 text-white space-y-2">

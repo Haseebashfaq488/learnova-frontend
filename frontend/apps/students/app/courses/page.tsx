@@ -9,14 +9,9 @@ import {
   Badge,
   Progress,
   mockEnrolledCoursesHub,
+  studentNavBranches,
 } from "@learnova/ui";
 import {
-  Compass,
-  BookOpen,
-  Route,
-  BookMarked,
-  Play,
-  Award,
   FileText,
   Clock,
   ArrowRight,
@@ -25,19 +20,11 @@ import {
   Sparkles,
   Layers,
   CheckCircle2,
+  Award,
 } from "lucide-react";
 
 export default function CourseHubPage() {
   const [filter, setFilter] = useState<"all" | "in-progress" | "completed">("all");
-
-  const navItems = [
-    { label: "Learning Hub", href: "/", icon: <Compass className="h-4 w-4" /> },
-    { label: "My Courses", href: "/courses", icon: <BookOpen className="h-4 w-4" />, active: true, badge: 4 },
-    { label: "Learning Path", href: "/learning-path", icon: <Route className="h-4 w-4" />, badge: "Unit 3" },
-    { label: "Focus Study (AI)", href: "/study", icon: <BookMarked className="h-4 w-4" />, badge: "Active" },
-    { label: "Focus Practice", href: "/practice", icon: <Play className="h-4 w-4" /> },
-    { label: "Progress & Radar", href: "/analytics", icon: <Award className="h-4 w-4" />, badge: "77%" },
-  ];
 
   const filteredCourses = useMemo(() => {
     if (filter === "all") return mockEnrolledCoursesHub;
@@ -59,7 +46,7 @@ export default function CourseHubPage() {
 
       <div className="flex flex-1">
         <Sidebar
-          items={navItems}
+          branches={studentNavBranches}
           currentPath="/courses"
           footerContent={
             <div className="rounded-xl bg-[#0B2B53] p-3.5 text-white space-y-2">

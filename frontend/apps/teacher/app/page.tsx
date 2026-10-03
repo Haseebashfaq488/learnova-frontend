@@ -15,7 +15,7 @@ import {
   Badge,
   Button,
   Avatar,
-  BranchedMenu,
+  teacherNavBranches,
 } from "@learnova/ui";
 import {
   BarChart3,
@@ -34,31 +34,8 @@ import {
   Layers,
   GraduationCap,
 } from "lucide-react";
-import {
-  Rocket01Icon,
-  Settings02Icon,
-  PaintBoardIcon,
-} from "@hugeicons/core-free-icons";
 
 export default function InstructorDashboardPage() {
-  const navItems = [
-    { label: "Faculty Dashboard", href: "/", icon: <BarChart3 className="h-4 w-4" />, active: true },
-    { label: "Curriculum Builder", href: "/curriculum", icon: <BookOpen className="h-4 w-4" />, badge: "4 Units" },
-    { label: "Student Mastery Grid", href: "/mastery", icon: <Users className="h-4 w-4" />, badge: "3 Alerts" },
-    { label: "Submissions & Grading", href: "#grading", icon: <FileCheck className="h-4 w-4" />, badge: 8 },
-    { label: "Discussions", href: "#discussions", icon: <MessageSquare className="h-4 w-4" /> },
-  ];
-
-  const studioBranches = [
-    {
-      label: "Course Modules in Review",
-      children: [
-        { value: "m1", label: "Module 1: Kinematics 2D", icon: Rocket01Icon },
-        { value: "m2", label: "Module 2: Newton's Laws", icon: Settings02Icon },
-        { value: "m3", label: "Module 3: Work & Energy", icon: PaintBoardIcon },
-      ],
-    },
-  ];
 
   const teacherCourses = [
     {
@@ -130,7 +107,7 @@ export default function InstructorDashboardPage() {
 
       <div className="flex flex-1">
         <Sidebar
-          items={navItems}
+          branches={teacherNavBranches}
           currentPath="/"
           footerContent={
             <div className="rounded-xl bg-[#0B2B53] p-3.5 text-white space-y-2">
@@ -148,18 +125,7 @@ export default function InstructorDashboardPage() {
               </Link>
             </div>
           }
-        >
-          <div className="space-y-2">
-            <p className="px-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-              Curriculum Studio
-            </p>
-            <BranchedMenu
-              items={studioBranches}
-              defaultActive="m1"
-              onSelect={() => {}}
-            />
-          </div>
-        </Sidebar>
+        />
 
         <main className="flex-1 p-6 md:p-8 space-y-8 max-w-7xl">
           {/* Header Area with Editorial Precision */}

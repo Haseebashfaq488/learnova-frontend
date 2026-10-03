@@ -9,13 +9,9 @@ import {
   Badge,
   Button,
   mockMasteryCohort,
+  teacherNavBranches,
 } from "@learnova/ui";
 import {
-  BarChart3,
-  BookOpen,
-  FileCheck,
-  Users,
-  MessageSquare,
   Search,
   Filter,
   Download,
@@ -25,6 +21,8 @@ import {
   Sparkles,
   ShieldCheck,
   ChevronDown,
+  BarChart3,
+  Users,
 } from "lucide-react";
 
 export default function StudentMasteryGridPage() {
@@ -33,14 +31,6 @@ export default function StudentMasteryGridPage() {
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
 
   const cohort = mockMasteryCohort;
-
-  const navItems = [
-    { label: "Faculty Dashboard", href: "/", icon: <BarChart3 className="h-4 w-4" /> },
-    { label: "Curriculum Builder", href: "/curriculum", icon: <BookOpen className="h-4 w-4" />, badge: "4 Units" },
-    { label: "Student Mastery Grid", href: "/mastery", icon: <Users className="h-4 w-4" />, active: true, badge: "3 Alerts" },
-    { label: "Submissions & Grading", href: "/#grading", icon: <FileCheck className="h-4 w-4" />, badge: 8 },
-    { label: "Discussions", href: "/#discussions", icon: <MessageSquare className="h-4 w-4" /> },
-  ];
 
   const filteredStudents = useMemo(() => {
     return cohort.students.filter((student) => {
@@ -99,7 +89,7 @@ export default function StudentMasteryGridPage() {
 
       <div className="flex flex-1">
         <Sidebar
-          items={navItems}
+          branches={teacherNavBranches}
           currentPath="/mastery"
           footerContent={
             <div className="rounded-xl bg-slate-900 p-3.5 text-white space-y-2">

@@ -13,7 +13,7 @@ import {
   Badge,
   Button,
   Avatar,
-  BranchedMenu,
+  adminNavBranches,
 } from "@learnova/ui";
 import {
   LayoutDashboard,
@@ -28,32 +28,8 @@ import {
   ArrowRight,
   SlidersHorizontal,
 } from "lucide-react";
-import {
-  Settings02Icon,
-  Layers01Icon,
-  PaintBoardIcon,
-} from "@hugeicons/core-free-icons";
 
 export default function AdminDashboardPage() {
-  const navItems = [
-    { label: "Overview", href: "/", icon: <LayoutDashboard className="h-4 w-4" />, active: true },
-    { label: "User Management", href: "/users", icon: <Users className="h-4 w-4" />, badge: "14.2k" },
-    { label: "Course Approvals", href: "/courses", icon: <BookOpenCheck className="h-4 w-4" />, badge: 3 },
-    { label: "Billing & Payouts", href: "/finance", icon: <CreditCard className="h-4 w-4" /> },
-    { label: "Security & Audits", href: "/security", icon: <ShieldAlert className="h-4 w-4" /> },
-    { label: "Platform Settings", href: "/settings", icon: <Settings className="h-4 w-4" /> },
-  ];
-
-  const adminConfigBranches = [
-    {
-      label: "Platform Configuration",
-      children: [
-        { value: "rbac", label: "RBAC & Permissions", icon: Settings02Icon },
-        { value: "theme", label: "Branding & Appearance", icon: PaintBoardIcon },
-        { value: "integrations", label: "Webhooks & APIs", icon: Layers01Icon },
-      ],
-    },
-  ];
 
   const pendingCourseApprovals = [
     {
@@ -113,22 +89,10 @@ export default function AdminDashboardPage() {
       />
 
       <div className="flex flex-1 items-start">
-        <Sidebar items={navItems} currentPath="/">
-          <div className="space-y-2">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-1">
-              System Settings
-            </p>
-            <BranchedMenu
-              items={adminConfigBranches}
-              defaultOpen={[0]}
-              defaultActive="rbac"
-              width={220}
-              color="#334155"
-              accentColor="#4f46e5"
-              lineColor="#cbd5e1"
-            />
-          </div>
-        </Sidebar>
+        <Sidebar
+          branches={adminNavBranches}
+          currentPath="/"
+        />
 
         <main className="flex-1 p-8 space-y-8 max-w-7xl">
           {/* Header */}

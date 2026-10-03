@@ -1,5 +1,8 @@
+"use client";
+
 import * as React from "react";
 import { cn } from "../lib/utils";
+import { BranchedMenu, BranchedMenuItem, BranchedMenuChild } from "./branched-menu";
 
 export interface NavItem {
   label: string;
@@ -10,67 +13,74 @@ export interface NavItem {
 }
 
 export interface SidebarProps {
-  items: NavItem[];
+  branches?: BranchedMenuItem[];
+  items?: NavItem[];
   currentPath?: string;
+  defaultOpen?: number | number[];
   children?: React.ReactNode;
   footerContent?: React.ReactNode;
   className?: string;
+  width?: number;
 }
 
-export function Sidebar({ items, currentPath, children, footerContent, className }: SidebarProps) {
+export function Sidebar({
+  branches,
+  items,
+  currentPath,
+  defaultOpen = [0, 1],
+  children,
+  footerContent,
+  className,
+  width = 240,
+}: SidebarProps) {
+  // If `branches` is provided, use BranchedMenu directly.
+  // If only legacy `items` is provided, convert into a root branch.
+  const menuItems: BranchedMenuItem[] = React.useMemo(() => {
+    if (branches && branches.length > 0) {
+      return branches;
+    }
+    if (items && items.length > 0) {
+      return [
+        {
+          label: "Navigation",
+          children: items.map((item) => ({
+            value: item.href,
+            label: item.label,
+            icon: item.icon,
+            href: item.href,
+            badge: item.badge,
+          })),
+        },
+      ];
+    }
+    return [];
+  }, [branches, items]);
+
   return (
     <aside
       className={cn(
-        "sticky top-16 flex h-[calc(100vh-4rem)] w-64 shrink-0 flex-col justify-between overflow-y-auto border-r border-slate-200/80 bg-white p-4 dark:border-slate-800 dark:bg-slate-900",
+        "sticky top-16 flex h-[calc(100vh-4rem)] w-64 shrink-0 flex-col justify-between overflow-y-auto border-r border-slate-200/80 bg-white p-3.5 dark:border-slate-800 dark:bg-slate-900 shadow-sm",
         className
       )}
     >
       <div className="space-y-4">
-        <nav className="space-y-1">
-          {items.map((item) => {
-            const isActive = item.active || (currentPath ? currentPath === item.href : false);
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "group flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium transition-all duration-150",
-                  isActive
-                    ? "bg-indigo-50 font-semibold text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300"
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
-                )}
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className={cn(
-                      "transition-colors",
-                      isActive
-                        ? "text-indigo-600 dark:text-indigo-400"
-                        : "text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300"
-                    )}
-                  >
-                    {item.icon}
-                  </span>
-                  <span>{item.label}</span>
-                </div>
-                {item.badge !== undefined && (
-                  <span
-                    className={cn(
-                      "rounded-full px-2 py-0.5 text-xs font-semibold",
-                      isActive
-                        ? "bg-indigo-200/60 text-indigo-800 dark:bg-indigo-800 dark:text-indigo-200"
-                        : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400"
-                    )}
-                  >
-                    {item.badge}
-                  </span>
-                )}
-              </a>
-            );
-          })}
-        </nav>
+        {menuItems.length > 0 && (
+          <BranchedMenu
+            items={menuItems}
+            currentPath={currentPath}
+            defaultOpen={defaultOpen}
+            width={width}
+            color="#0B2B53"
+            accentColor="#00A8E8"
+            lineColor="#CBD5E1"
+          />
+        )}
 
-        {children && <div className="pt-3 border-t border-slate-100 dark:border-slate-800">{children}</div>}
+        {children && (
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800">
+            {children}
+          </div>
+        )}
       </div>
 
       {footerContent && (
@@ -81,3 +91,5 @@ export function Sidebar({ items, currentPath, children, footerContent, className
     </aside>
   );
 }
+
+export default Sidebar;

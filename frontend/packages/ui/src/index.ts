@@ -21,3 +21,4 @@ export * from "./data/mock-analytics";
 export * from "./data/mock-courses-hub";
 export * from "./data/mock-learning-path";
 export * from "./data/mock-ai-tutor";
+export * from "./data/navigation";

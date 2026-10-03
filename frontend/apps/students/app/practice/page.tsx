@@ -7,12 +7,9 @@ import {
   Sidebar,
   Button,
   mockPracticeQuestions,
+  studentNavBranches,
 } from "@learnova/ui";
 import {
-  Compass,
-  BookOpen,
-  Route,
-  BookMarked,
   FileText,
   Award,
   Play,
@@ -52,15 +49,6 @@ export default function FocusPracticePage() {
     return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
-  const navItems = [
-    { label: "Learning Hub", href: "/", icon: <Compass className="h-4 w-4" /> },
-    { label: "My Courses", href: "/courses", icon: <BookOpen className="h-4 w-4" />, badge: 4 },
-    { label: "Learning Path", href: "/learning-path", icon: <Route className="h-4 w-4" />, badge: "Unit 3" },
-    { label: "Focus Study (AI)", href: "/study", icon: <BookMarked className="h-4 w-4" />, badge: "Active" },
-    { label: "Focus Practice", href: "/practice", icon: <Play className="h-4 w-4" />, active: true },
-    { label: "Progress & Radar", href: "/analytics", icon: <Award className="h-4 w-4" />, badge: "77%" },
-  ];
-
   const handleNext = () => {
     if (currentIdx < mockPracticeQuestions.length - 1) {
       setCurrentIdx(currentIdx + 1);
@@ -95,7 +83,7 @@ export default function FocusPracticePage() {
       <div className="flex flex-1">
         {!isFullScreen && (
           <Sidebar
-            items={navItems}
+            branches={studentNavBranches}
             currentPath="/practice"
             className="bg-slate-950 border-slate-800 text-slate-300"
             footerContent={
