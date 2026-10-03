@@ -23,6 +23,10 @@ import {
   Maximize2,
   Minimize2,
   RefreshCw,
+  BookOpen,
+  ChevronRight,
+  RotateCcw,
+  Zap,
 } from "lucide-react";
 
 export default function FocusPracticePage() {
@@ -66,7 +70,7 @@ export default function FocusPracticePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       {!isFullScreen && (
         <AppHeader
           portalName="Students"
@@ -76,7 +80,7 @@ export default function FocusPracticePage() {
           notificationCount={3}
           streakDays={14}
           currentXp={1420}
-          cohortTag="AP Physics C: Mechanics"
+          cohortTag="AP Physics 1: Practice Arena"
         />
       )}
 
@@ -85,215 +89,242 @@ export default function FocusPracticePage() {
           <Sidebar
             branches={studentNavBranches}
             currentPath="/practice"
-            className="bg-slate-950 border-slate-800 text-slate-300"
             footerContent={
-              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
-                <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span>Questions Solved</span>
-                  <span className="font-bold text-sky-400">{currentIdx + 1} / {mockPracticeQuestions.length}</span>
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <div className="flex items-center justify-between text-xs text-slate-600">
+                  <span className="font-medium">Questions Solved</span>
+                  <span className="font-bold text-sky-600">
+                    {currentIdx + 1} / {mockPracticeQuestions.length}
+                  </span>
                 </div>
-                <div className="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                <div className="w-full h-1.5 rounded-full bg-slate-200 overflow-hidden">
                   <div
-                    className="h-full bg-sky-500 rounded-full transition-all duration-300"
-                    style={{ width: `${((currentIdx + 1) / mockPracticeQuestions.length) * 100}%` }}
+                    className="h-full bg-[#00A8E8] rounded-full transition-all duration-300"
+                    style={{
+                      width: `${((currentIdx + 1) / mockPracticeQuestions.length) * 100}%`,
+                    }}
                   ></div>
                 </div>
+                <p className="text-[11px] text-slate-500">
+                  Unit 3 Assessment • 80% pass threshold
+                </p>
               </div>
             }
           />
         )}
 
-        <main className="flex-1 flex flex-col justify-between p-4 sm:p-6 lg:p-8 bg-[#0B2B53]/20 relative">
-          {/* Focus Session Utility Bar */}
-          <div className="w-full max-w-4xl mx-auto flex items-center justify-between pb-4 border-b border-slate-800">
-            <div className="flex items-center gap-3">
-              <Link
-                href="/"
-                className="flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-white transition-colors"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                <span>Exit Focus Mode</span>
-              </Link>
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
-              <span className="text-xs uppercase tracking-wider text-slate-400">
-                {question.topic}
-              </span>
-            </div>
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 space-y-6 max-w-4xl mx-auto w-full">
+          {/* Breadcrumb & Navigation */}
+          <nav className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+            <Link href="/courses" className="hover:text-[#0B2B53] flex items-center gap-1">
+              <BookOpen className="h-3.5 w-3.5" />
+              <span>Courses</span>
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <Link href="/courses/ap-physics-1" className="hover:text-[#0B2B53]">
+              AP Physics 1
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <span className="font-bold text-[#0B2B53]">Practice Arena</span>
+          </nav>
 
+          {/* Focus Session Utility Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
             <div className="flex items-center gap-3">
-              {/* Session Timer */}
-              <div className="flex items-center gap-1.5 bg-[#0B2B53] text-sky-300 px-3 py-1 rounded-full text-xs font-bold border border-sky-500/20 shadow-sm">
-                <Timer className="h-3.5 w-3.5 text-sky-400" />
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-sky-50 border border-sky-200 font-mono text-xs font-bold text-sky-800">
+                <Timer className="h-4 w-4 text-sky-600" />
                 <span>{formatTimer(secondsRemaining)}</span>
               </div>
-
-              {/* Zen Sound Toggle */}
               <button
+                type="button"
                 onClick={() => setIsZenSoundActive(!isZenSoundActive)}
-                className={`p-2 rounded-full border transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
                   isZenSoundActive
-                    ? "bg-emerald-500/20 border-emerald-500 text-emerald-400"
-                    : "bg-slate-800 border-slate-700 text-slate-400 hover:text-white"
+                    ? "bg-emerald-50 text-emerald-800 border-emerald-300 shadow-sm"
+                    : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900"
                 }`}
-                title="Zen White Noise Mode"
               >
-                <Headphones className="h-4 w-4" />
+                <Headphones className="h-3.5 w-3.5" />
+                <span>{isZenSoundActive ? "Zen Audio On" : "White Noise"}</span>
               </button>
+            </div>
 
-              {/* Fullscreen Toggle */}
+            <div className="flex items-center gap-2">
               <button
+                type="button"
+                onClick={() => {
+                  setSelectedOption("");
+                  setShowExplanation(false);
+                }}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 text-xs font-medium text-slate-600 transition-colors"
+                title="Reset question response"
+              >
+                <RotateCcw className="h-3.5 w-3.5" />
+                <span>Reset</span>
+              </button>
+              <button
+                type="button"
                 onClick={() => setIsFullScreen(!isFullScreen)}
-                className="p-2 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-white transition-all"
-                title={isFullScreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+                className="p-2 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 transition-colors"
+                title="Toggle Fullscreen Arena"
               >
                 {isFullScreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
               </button>
             </div>
           </div>
 
-          {/* Central Focus Arena */}
-          <div className="w-full max-w-3xl mx-auto my-auto py-6">
-            <div className="bg-slate-950/90 rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-800 shadow-2xl relative overflow-hidden backdrop-blur-xl">
-              {/* Progress Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4">
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-950 border border-sky-800 text-sky-300 text-xs font-bold uppercase tracking-wider">
-                    <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-                    Question {question.questionNumber} of {question.totalQuestions}
-                  </span>
-                  <span className="text-xs text-slate-400">Single Choice</span>
-                </div>
-                <span className="text-xs font-semibold text-slate-400">
-                  Topic: {question.subtopic}
+          {/* Question Jump Selector */}
+          <div className="flex items-center justify-between gap-2 overflow-x-auto pb-1">
+            <div className="flex items-center gap-1.5">
+              {mockPracticeQuestions.map((q, idx) => {
+                const isActive = idx === currentIdx;
+                return (
+                  <button
+                    key={q.id}
+                    type="button"
+                    onClick={() => {
+                      setCurrentIdx(idx);
+                      setSelectedOption(idx === 3 ? "opt-4-b" : "");
+                      setShowExplanation(false);
+                    }}
+                    className={`w-9 h-9 rounded-xl font-mono text-xs font-bold transition-all ${
+                      isActive
+                        ? "bg-[#00A8E8] text-white shadow-md shadow-sky-500/20 scale-105 ring-2 ring-sky-300"
+                        : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                    }`}
+                  >
+                    {idx + 1}
+                  </button>
+                );
+              })}
+            </div>
+            <span className="text-xs font-semibold text-slate-500 whitespace-nowrap">
+              {question.topic} • {question.difficulty}
+            </span>
+          </div>
+
+          {/* Main Problem Card */}
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-6">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-600">
+                Problem {currentIdx + 1} of {mockPracticeQuestions.length}
+              </span>
+              <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 flex items-center gap-1">
+                <Zap className="h-3 w-3 text-emerald-600" /> +25 XP
+              </span>
+            </div>
+
+            <p className="text-base sm:text-lg font-semibold text-slate-900 leading-relaxed">
+              {question.prompt}
+            </p>
+
+            {/* Answer Options */}
+            <div className="space-y-3 pt-2">
+              {question.options.map((opt) => {
+                const isSelected = selectedOption === opt.id;
+                const isCorrectOption = opt.isCorrect;
+
+                let stateClasses =
+                  "bg-slate-50/70 border-slate-200 text-slate-800 hover:bg-slate-100 hover:border-slate-300";
+                if (isSelected) {
+                  stateClasses = isCorrectOption
+                    ? "bg-emerald-50/90 border-emerald-500 text-emerald-950 ring-2 ring-emerald-500/20"
+                    : "bg-rose-50/90 border-rose-500 text-rose-950 ring-2 ring-rose-500/20";
+                }
+
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => setSelectedOption(opt.id)}
+                    className={`w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between gap-4 ${stateClasses}`}
+                  >
+                    <div className="flex items-center gap-3.5">
+                      <span
+                        className={`w-8 h-8 rounded-xl font-mono text-xs font-bold flex items-center justify-center shrink-0 border transition-all ${
+                          isSelected
+                            ? isCorrectOption
+                              ? "bg-emerald-600 border-emerald-600 text-white shadow-sm"
+                              : "bg-rose-600 border-rose-600 text-white shadow-sm"
+                            : "bg-white border-slate-200 text-slate-700 shadow-2xs"
+                        }`}
+                      >
+                        {opt.label}
+                      </span>
+                      <span className="text-sm font-medium leading-normal">{opt.text}</span>
+                    </div>
+
+                    {isSelected && (
+                      <span className="text-xs font-bold shrink-0">
+                        {isCorrectOption ? (
+                          <span className="text-emerald-700 flex items-center gap-1 bg-emerald-100/70 px-2.5 py-1 rounded-full">
+                            <CheckCircle2 className="h-4 w-4 text-emerald-600" /> Correct
+                          </span>
+                        ) : (
+                          <span className="text-rose-700 bg-rose-100/70 px-2.5 py-1 rounded-full">
+                            Incorrect
+                          </span>
+                        )}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Hint and Formula Dropdown */}
+            <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <button
+                type="button"
+                onClick={() => setShowExplanation(!showExplanation)}
+                className="text-xs font-semibold text-sky-600 hover:text-sky-700 flex items-center gap-1.5 transition-colors"
+              >
+                <HelpCircle className="h-4 w-4" />
+                <span>{showExplanation ? "Hide Derivation" : "Show Formula & Derivation"}</span>
+              </button>
+
+              {question.helperFormula && (
+                <span className="text-xs text-slate-500 font-mono bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200">
+                  Formula: {question.helperFormula}
                 </span>
-              </div>
+              )}
+            </div>
 
-              {/* Linear Micro Progress Bar */}
-              <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden mb-6">
-                <div
-                  className="h-full bg-gradient-to-r from-sky-500 to-emerald-400 rounded-full transition-all duration-300"
-                  style={{ width: `${(question.questionNumber / question.totalQuestions) * 100}%` }}
-                ></div>
-              </div>
-
-              {/* Prompt Statement */}
-              <div className="space-y-3 mb-8">
-                <h2 className="text-lg sm:text-xl font-semibold text-white leading-relaxed">
-                  {question.prompt}
-                </h2>
+            {showExplanation && (
+              <div className="p-4 rounded-2xl bg-sky-50/70 border border-sky-200/80 text-xs text-slate-700 space-y-2.5 animate-fadeIn">
+                <div className="flex items-center gap-2 font-bold text-sky-800">
+                  <Sparkles className="h-4 w-4 text-sky-600" />
+                  <span>Physics Derivation Breakdown</span>
+                </div>
+                <p className="leading-relaxed text-slate-700">
+                  {question.explanation}
+                </p>
                 {question.helperFormula && (
-                  <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-sky-300 font-mono flex items-center justify-between">
-                    <span>Formula: {question.helperFormula}</span>
-                    <button
-                      onClick={() => setShowExplanation(!showExplanation)}
-                      className="text-slate-400 hover:text-sky-300 flex items-center gap-1 text-[11px]"
-                    >
-                      <HelpCircle className="h-3.5 w-3.5" />
-                      <span>{showExplanation ? "Hide Hint" : "Need Hint?"}</span>
-                    </button>
+                  <div className="p-2.5 rounded-xl bg-white border border-sky-200 font-mono text-[11px] text-sky-900 font-semibold shadow-2xs">
+                    {question.helperFormula}
                   </div>
                 )}
               </div>
-
-              {/* Multiple Choice Options */}
-              <div className="flex flex-col gap-3" role="radiogroup">
-                {question.options.map((opt) => {
-                  const isSelected = selectedOption === opt.id;
-                  return (
-                    <label
-                      key={opt.id}
-                      onClick={() => setSelectedOption(opt.id)}
-                      className={`cursor-pointer group flex items-center justify-between p-4 rounded-2xl border transition-all duration-150 ${
-                        isSelected
-                          ? "bg-sky-950/40 border-sky-500 shadow-md shadow-sky-500/10 ring-1 ring-sky-500"
-                          : "bg-slate-900/60 border-slate-800/80 hover:bg-slate-850 hover:border-slate-700"
-                      }`}
-                    >
-                      <div className="flex items-center gap-4">
-                        <div
-                          className={`w-8 h-8 rounded-xl flex items-center justify-center font-bold text-xs transition-colors ${
-                            isSelected
-                              ? "bg-sky-500 text-slate-950"
-                              : "bg-slate-800 text-slate-300 group-hover:bg-slate-700"
-                          }`}
-                        >
-                          {opt.label}
-                        </div>
-                        <span
-                          className={`text-sm font-medium ${
-                            isSelected ? "text-white font-semibold" : "text-slate-300"
-                          }`}
-                        >
-                          {opt.text}
-                        </span>
-                      </div>
-
-                      <div
-                        className={`w-6 h-6 rounded-full flex items-center justify-center border transition-colors ${
-                          isSelected
-                            ? "bg-sky-500 border-sky-500 text-slate-950"
-                            : "border-slate-700 bg-slate-900"
-                        }`}
-                      >
-                        {isSelected && <CheckCircle2 className="h-4 w-4" />}
-                      </div>
-                    </label>
-                  );
-                })}
-              </div>
-
-              {/* Step-by-Step Explanation Banner */}
-              {showExplanation && (
-                <div className="mt-6 p-4 rounded-2xl bg-emerald-950/40 border border-emerald-800/60 text-xs text-emerald-200 space-y-1">
-                  <div className="font-bold flex items-center gap-1.5 text-emerald-400">
-                    <Sparkles className="h-4 w-4" />
-                    <span>Physics Derivation Hint:</span>
-                  </div>
-                  <p className="leading-relaxed">{question.explanation}</p>
-                </div>
-              )}
-            </div>
+            )}
           </div>
 
-          {/* Bottom Action Footer */}
-          <div className="w-full max-w-4xl mx-auto flex items-center justify-between pt-4 border-t border-slate-800">
+          {/* Navigation Action Buttons */}
+          <div className="flex items-center justify-between pt-2">
             <Button
               variant="outline"
               onClick={handlePrev}
               disabled={currentIdx === 0}
-              className="border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
+              className="border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-40 rounded-xl text-xs font-medium shadow-2xs"
             >
-              <ArrowLeft className="h-4 w-4 mr-1.5" />
-              <span>Previous</span>
+              <ArrowLeft className="h-4 w-4 mr-1.5" /> Previous Problem
             </Button>
-
-            <div className="flex items-center gap-2">
-              {mockPracticeQuestions.map((q, idx) => (
-                <button
-                  key={q.id}
-                  onClick={() => {
-                    setCurrentIdx(idx);
-                    setSelectedOption("");
-                    setShowExplanation(false);
-                  }}
-                  className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${
-                    idx === currentIdx
-                      ? "bg-sky-500 text-slate-950 shadow-md shadow-sky-500/20"
-                      : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white"
-                  }`}
-                >
-                  {idx + 1}
-                </button>
-              ))}
-            </div>
 
             <Button
               onClick={handleNext}
               disabled={currentIdx === mockPracticeQuestions.length - 1}
-              className="bg-[#00A8E8] hover:bg-sky-400 text-slate-950 font-bold px-6"
+              className="bg-[#00A8E8] hover:bg-sky-600 text-white font-bold rounded-xl text-xs shadow-md shadow-sky-500/20 px-5"
             >
-              <span>Next Question</span>
-              <ArrowRight className="h-4 w-4 ml-1.5" />
+              Next Problem <ArrowRight className="h-4 w-4 ml-1.5" />
             </Button>
           </div>
         </main>

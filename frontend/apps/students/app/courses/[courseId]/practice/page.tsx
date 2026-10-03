@@ -27,6 +27,8 @@ import {
   RefreshCw,
   BookOpen,
   ChevronRight,
+  RotateCcw,
+  Zap,
 } from "lucide-react";
 
 export default function CourseFocusPracticePage() {
@@ -79,7 +81,7 @@ export default function CourseFocusPracticePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       {!isFullScreen && (
         <AppHeader
           portalName="Students"
@@ -98,17 +100,20 @@ export default function CourseFocusPracticePage() {
           <Sidebar
             branches={courseBranches}
             currentPath={`/courses/${courseId}/practice`}
-            className="bg-slate-950 border-slate-800 text-slate-300"
             footerContent={
-              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
-                <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span>Questions Solved</span>
-                  <span className="font-bold text-sky-400">{currentIdx + 1} / {mockPracticeQuestions.length}</span>
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <div className="flex items-center justify-between text-xs text-slate-600">
+                  <span className="font-medium">Questions Solved</span>
+                  <span className="font-bold text-sky-600">
+                    {currentIdx + 1} / {mockPracticeQuestions.length}
+                  </span>
                 </div>
-                <div className="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                <div className="w-full h-1.5 rounded-full bg-slate-200 overflow-hidden">
                   <div
-                    className="h-full bg-sky-500 rounded-full transition-all duration-300"
-                    style={{ width: `${((currentIdx + 1) / mockPracticeQuestions.length) * 100}%` }}
+                    className="h-full bg-[#00A8E8] rounded-full transition-all duration-300"
+                    style={{
+                      width: `${((currentIdx + 1) / mockPracticeQuestions.length) * 100}%`,
+                    }}
                   ></div>
                 </div>
                 <p className="text-[11px] text-slate-500">
@@ -119,35 +124,35 @@ export default function CourseFocusPracticePage() {
           />
         )}
 
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 space-y-6 max-w-5xl mx-auto w-full">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 space-y-6 max-w-4xl mx-auto w-full">
           {/* Breadcrumb & Navigation */}
-          <nav className="flex items-center gap-2 text-xs text-slate-400 font-medium">
-            <Link href="/courses" className="hover:text-white flex items-center gap-1">
+          <nav className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+            <Link href="/courses" className="hover:text-[#0B2B53] flex items-center gap-1">
               <BookOpen className="h-3.5 w-3.5" />
               <span>Courses</span>
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-slate-600" />
-            <Link href={`/courses/${courseId}/learning-path`} className="hover:text-white">
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <Link href={`/courses/${courseId}`} className="hover:text-[#0B2B53]">
               {course.title}
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-slate-600" />
-            <span className="font-bold text-sky-400">Practice Arena</span>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <span className="font-bold text-[#0B2B53]">Practice Arena</span>
           </nav>
 
           {/* Top Focus Mode Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 shadow-lg">
+          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
             <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2 px-3 py-1 rounded-xl bg-slate-900/90 border border-slate-700 font-mono text-sm font-bold text-sky-400">
-                <Timer className="h-4 w-4 text-sky-400" />
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-sky-50 border border-sky-200 font-mono text-xs font-bold text-sky-800">
+                <Timer className="h-4 w-4 text-sky-600" />
                 <span>{formatTimer(secondsRemaining)}</span>
               </div>
               <button
                 type="button"
                 onClick={() => setIsZenSoundActive(!isZenSoundActive)}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold border transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
                   isZenSoundActive
-                    ? "bg-emerald-950/80 text-emerald-300 border-emerald-500/50"
-                    : "bg-slate-900/60 text-slate-400 border-slate-700 hover:text-slate-200"
+                    ? "bg-emerald-50 text-emerald-800 border-emerald-300 shadow-sm"
+                    : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900"
                 }`}
               >
                 <Headphones className="h-3.5 w-3.5" />
@@ -158,8 +163,20 @@ export default function CourseFocusPracticePage() {
             <div className="flex items-center gap-2">
               <button
                 type="button"
+                onClick={() => {
+                  setSelectedOption("");
+                  setShowExplanation(false);
+                }}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 text-xs font-medium text-slate-600 transition-colors"
+                title="Reset question response"
+              >
+                <RotateCcw className="h-3.5 w-3.5" />
+                <span>Reset</span>
+              </button>
+              <button
+                type="button"
                 onClick={() => setIsFullScreen(!isFullScreen)}
-                className="p-2 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-700 text-slate-300 transition-colors"
+                className="p-2 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 transition-colors"
                 title="Toggle Fullscreen Arena"
               >
                 {isFullScreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
@@ -168,8 +185,8 @@ export default function CourseFocusPracticePage() {
           </div>
 
           {/* Question Jump Selector */}
-          <div className="flex items-center justify-between gap-2 overflow-x-auto pb-2">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between gap-2 overflow-x-auto pb-1">
+            <div className="flex items-center gap-1.5">
               {mockPracticeQuestions.map((q, idx) => {
                 const isActive = idx === currentIdx;
                 return (
@@ -183,8 +200,8 @@ export default function CourseFocusPracticePage() {
                     }}
                     className={`w-9 h-9 rounded-xl font-mono text-xs font-bold transition-all ${
                       isActive
-                        ? "bg-sky-500 text-white shadow-lg shadow-sky-500/30 scale-105"
-                        : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200 border border-slate-700"
+                        ? "bg-[#00A8E8] text-white shadow-md shadow-sky-500/20 scale-105 ring-2 ring-sky-300"
+                        : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
                     }`}
                   >
                     {idx + 1}
@@ -192,23 +209,23 @@ export default function CourseFocusPracticePage() {
                 );
               })}
             </div>
-            <span className="text-xs font-semibold text-slate-400 whitespace-nowrap">
+            <span className="text-xs font-semibold text-slate-500 whitespace-nowrap">
               {question.topic} • {question.difficulty}
             </span>
           </div>
 
           {/* Question Card */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-slate-800 border border-slate-700 shadow-xl space-y-6">
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-6">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-600">
                 Problem {currentIdx + 1} of {mockPracticeQuestions.length}
               </span>
-              <span className="text-xs font-semibold text-emerald-400 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-800/80">
-                +25 XP
+              <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 flex items-center gap-1">
+                <Zap className="h-3 w-3 text-emerald-600" /> +25 XP
               </span>
             </div>
 
-            <p className="text-base sm:text-lg font-medium text-slate-100 leading-relaxed">
+            <p className="text-base sm:text-lg font-semibold text-slate-900 leading-relaxed">
               {question.prompt}
             </p>
 
@@ -218,11 +235,12 @@ export default function CourseFocusPracticePage() {
                 const isSelected = selectedOption === opt.id;
                 const isCorrectOption = opt.isCorrect;
 
-                let stateClasses = "bg-slate-900/70 border-slate-700 text-slate-200 hover:bg-slate-700/50";
+                let stateClasses =
+                  "bg-slate-50/70 border-slate-200 text-slate-800 hover:bg-slate-100 hover:border-slate-300";
                 if (isSelected) {
                   stateClasses = isCorrectOption
-                    ? "bg-emerald-950/60 border-emerald-500 text-white ring-2 ring-emerald-500/30"
-                    : "bg-rose-950/60 border-rose-500 text-white ring-2 ring-rose-500/30";
+                    ? "bg-emerald-50/90 border-emerald-500 text-emerald-950 ring-2 ring-emerald-500/20"
+                    : "bg-rose-50/90 border-rose-500 text-rose-950 ring-2 ring-rose-500/20";
                 }
 
                 return (
@@ -232,27 +250,31 @@ export default function CourseFocusPracticePage() {
                     onClick={() => setSelectedOption(opt.id)}
                     className={`w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between gap-4 ${stateClasses}`}
                   >
-                    <div className="flex items-center gap-3">
-                      <span className={`w-7 h-7 rounded-lg font-mono text-xs font-bold flex items-center justify-center shrink-0 ${
-                        isSelected
-                          ? isCorrectOption
-                            ? "bg-emerald-500 text-white"
-                            : "bg-rose-500 text-white"
-                          : "bg-slate-800 text-slate-400"
-                      }`}>
+                    <div className="flex items-center gap-3.5">
+                      <span
+                        className={`w-8 h-8 rounded-xl font-mono text-xs font-bold flex items-center justify-center shrink-0 border transition-all ${
+                          isSelected
+                            ? isCorrectOption
+                              ? "bg-emerald-600 border-emerald-600 text-white shadow-sm"
+                              : "bg-rose-600 border-rose-600 text-white shadow-sm"
+                            : "bg-white border-slate-200 text-slate-700 shadow-2xs"
+                        }`}
+                      >
                         {opt.label}
                       </span>
-                      <span className="text-sm font-medium">{opt.text}</span>
+                      <span className="text-sm font-medium leading-normal">{opt.text}</span>
                     </div>
 
                     {isSelected && (
                       <span className="text-xs font-bold shrink-0">
                         {isCorrectOption ? (
-                          <span className="text-emerald-400 flex items-center gap-1">
-                            <CheckCircle2 className="h-4 w-4" /> Correct
+                          <span className="text-emerald-700 flex items-center gap-1 bg-emerald-100/70 px-2.5 py-1 rounded-full">
+                            <CheckCircle2 className="h-4 w-4 text-emerald-600" /> Correct
                           </span>
                         ) : (
-                          <span className="text-rose-400">Incorrect</span>
+                          <span className="text-rose-700 bg-rose-100/70 px-2.5 py-1 rounded-full">
+                            Incorrect
+                          </span>
                         )}
                       </span>
                     )}
@@ -262,34 +284,34 @@ export default function CourseFocusPracticePage() {
             </div>
 
             {/* Hint and Formula Dropdown */}
-            <div className="pt-4 border-t border-slate-700/80 flex items-center justify-between">
+            <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
               <button
                 type="button"
                 onClick={() => setShowExplanation(!showExplanation)}
-                className="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center gap-1.5 transition-colors"
+                className="text-xs font-semibold text-sky-600 hover:text-sky-700 flex items-center gap-1.5 transition-colors"
               >
                 <HelpCircle className="h-4 w-4" />
                 <span>{showExplanation ? "Hide Derivation" : "Show Formula & Derivation"}</span>
               </button>
 
               {question.helperFormula && (
-                <span className="text-xs text-slate-400 font-mono">
+                <span className="text-xs text-slate-500 font-mono bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200">
                   Formula: {question.helperFormula}
                 </span>
               )}
             </div>
 
             {showExplanation && (
-              <div className="p-4 rounded-2xl bg-slate-900 border border-slate-700/80 text-xs text-slate-300 space-y-2 animate-fadeIn">
-                <div className="flex items-center gap-2 font-bold text-sky-400">
-                  <Sparkles className="h-4 w-4" />
+              <div className="p-4 rounded-2xl bg-sky-50/70 border border-sky-200/80 text-xs text-slate-700 space-y-2.5 animate-fadeIn">
+                <div className="flex items-center gap-2 font-bold text-sky-800">
+                  <Sparkles className="h-4 w-4 text-sky-600" />
                   <span>Physics Derivation Breakdown</span>
                 </div>
-                <p className="leading-relaxed text-slate-300">
+                <p className="leading-relaxed text-slate-700">
                   {question.explanation}
                 </p>
                 {question.helperFormula && (
-                  <div className="p-2.5 rounded-xl bg-slate-800 font-mono text-[11px] text-emerald-300">
+                  <div className="p-2.5 rounded-xl bg-white border border-sky-200 font-mono text-[11px] text-sky-900 font-semibold shadow-2xs">
                     {question.helperFormula}
                   </div>
                 )}
@@ -303,7 +325,7 @@ export default function CourseFocusPracticePage() {
               variant="outline"
               onClick={handlePrev}
               disabled={currentIdx === 0}
-              className="border-slate-700 text-slate-300 hover:bg-slate-800 disabled:opacity-30 rounded-xl text-xs"
+              className="border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-40 rounded-xl text-xs font-medium shadow-2xs"
             >
               <ArrowLeft className="h-4 w-4 mr-1.5" /> Previous Problem
             </Button>
@@ -311,7 +333,7 @@ export default function CourseFocusPracticePage() {
             <Button
               onClick={handleNext}
               disabled={currentIdx === mockPracticeQuestions.length - 1}
-              className="bg-[#00A8E8] hover:bg-sky-500 text-white font-bold rounded-xl text-xs shadow-md shadow-sky-500/20"
+              className="bg-[#00A8E8] hover:bg-sky-600 text-white font-bold rounded-xl text-xs shadow-md shadow-sky-500/20 px-5"
             >
               Next Problem <ArrowRight className="h-4 w-4 ml-1.5" />
             </Button>
