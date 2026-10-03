@@ -57,7 +57,7 @@ export default function CourseHubPage() {
               <p className="text-xs text-slate-300">
                 AP Physics 2D Force Equilibrium Lab due Thursday.
               </p>
-              <Link href="/study">
+              <Link href="/courses/ap-physics-1/study">
                 <Button size="sm" className="w-full bg-[#00A8E8] hover:bg-sky-400 text-[#0B2B53] font-bold text-xs">
                   Continue Study
                 </Button>

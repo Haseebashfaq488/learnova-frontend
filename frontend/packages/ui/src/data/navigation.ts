@@ -15,27 +15,84 @@ import {
   ShieldAlert,
   Settings,
   Layers,
+  ArrowLeft,
+  Zap,
+  Sparkles,
+  FileText,
 } from "lucide-react";
 import { BranchedMenuItem } from "../components/branched-menu";
 
-export const studentNavBranches: BranchedMenuItem[] = [
+// Top-level global navigation for student portal
+export const studentGlobalNavBranches: BranchedMenuItem[] = [
   {
-    label: "Learning Journey",
+    label: "Main Workspace",
     children: [
-      { value: "hub", label: "Learning Hub", href: "/", icon: Compass },
+      { value: "hub", label: "Dashboard / Hub", href: "/", icon: Compass },
       { value: "courses", label: "My Courses", href: "/courses", icon: BookOpen, badge: 4 },
-      { value: "learning-path", label: "Learning Path", href: "/learning-path", icon: Route, badge: "Unit 3" },
-      { value: "study", label: "Focus Study (AI)", href: "/study", icon: BookMarked, badge: "Active" },
+      { value: "analytics", label: "Progress & Analytics", href: "/analytics", icon: Award, badge: "77%" },
     ],
   },
   {
-    label: "Practice & Mastery",
+    label: "Quick Resume",
     children: [
-      { value: "practice", label: "Focus Practice", href: "/practice", icon: Play },
-      { value: "analytics", label: "Progress & Radar", href: "/analytics", icon: Award, badge: "77%" },
+      { value: "ap-physics-1", label: "AP Physics 1", href: "/courses/ap-physics-1/study", icon: Zap, badge: "Lesson 3.2" },
+      { value: "linear-algebra", label: "Linear Algebra", href: "/courses/linear-algebra/learning-path", icon: Sparkles, badge: "42%" },
     ],
   },
 ];
+
+// Contextual in-course navigation
+export const getStudentCourseNavBranches = (
+  courseId: string = "ap-physics-1",
+  courseTitle: string = "AP Physics 1"
+): BranchedMenuItem[] => [
+  {
+    label: courseTitle,
+    children: [
+      {
+        value: "learning-path",
+        label: "Learning Path",
+        href: `/courses/${courseId}/learning-path`,
+        icon: Route,
+        badge: "Unit 3",
+      },
+      {
+        value: "study",
+        label: "Focus Study (AI)",
+        href: `/courses/${courseId}/study`,
+        icon: BookMarked,
+        badge: "Active",
+      },
+      {
+        value: "practice",
+        label: "Practice Arena",
+        href: `/courses/${courseId}/practice`,
+        icon: Play,
+      },
+    ],
+  },
+  {
+    label: "Course Navigation",
+    children: [
+      {
+        value: "all-courses",
+        label: "← All Courses",
+        href: "/courses",
+        icon: ArrowLeft,
+      },
+      {
+        value: "analytics",
+        label: "My Analytics",
+        href: "/analytics",
+        icon: Award,
+        badge: "77%",
+      },
+    ],
+  },
+];
+
+// Alias for backwards compatibility
+export const studentNavBranches = studentGlobalNavBranches;
 
 export const teacherNavBranches: BranchedMenuItem[] = [
   {

@@ -60,7 +60,7 @@ export default function StudentAnalyticsPage() {
               <p className="text-xs text-slate-300 mb-2">
                 Bring Rotational Dynamics from 58% to ≥85% to reach Top 5% in Cohort!
               </p>
-              <Link href="/practice">
+              <Link href="/courses/ap-physics-1/practice">
                 <Button size="sm" className="w-full bg-[#00A8E8] hover:bg-sky-400 text-[#0B2B53] font-bold text-xs">
                   Practice Weak Topics
                 </Button>

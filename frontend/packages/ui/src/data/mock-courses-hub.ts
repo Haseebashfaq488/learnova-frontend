@@ -16,7 +16,7 @@ export const mockEnrolledCoursesHub: EnrolledCourseCardData[] = [
     totalLessons: 26,
     interactiveLabsCount: 8,
     durationWeeklyRemaining: "4.2 hrs remaining this week",
-    pathSlug: "/learning-path",
+    pathSlug: "/courses/ap-physics-1/learning-path",
   },
   {
     id: "nextjs-fullstack",
@@ -33,7 +33,7 @@ export const mockEnrolledCoursesHub: EnrolledCourseCardData[] = [
     totalLessons: 24,
     interactiveLabsCount: 6,
     durationWeeklyRemaining: "3.5 hrs remaining this week",
-    pathSlug: "/learning-path",
+    pathSlug: "/courses/nextjs-fullstack/learning-path",
   },
   {
     id: "design-systems-engineering",
@@ -50,7 +50,7 @@ export const mockEnrolledCoursesHub: EnrolledCourseCardData[] = [
     totalLessons: 18,
     interactiveLabsCount: 4,
     durationWeeklyRemaining: "2.8 hrs remaining this week",
-    pathSlug: "/learning-path",
+    pathSlug: "/courses/design-systems-engineering/learning-path",
   },
   {
     id: "intro-linear-algebra",
@@ -67,6 +67,6 @@ export const mockEnrolledCoursesHub: EnrolledCourseCardData[] = [
     totalLessons: 20,
     interactiveLabsCount: 5,
     durationWeeklyRemaining: "Course Passed • Verified Badge Earned",
-    pathSlug: "/learning-path",
+    pathSlug: "/courses/intro-linear-algebra/learning-path",
   },
 ];
