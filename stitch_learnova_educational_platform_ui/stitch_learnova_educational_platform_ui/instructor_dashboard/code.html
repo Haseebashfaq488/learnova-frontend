@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#adc7f8", "primary": "#001634", "on-secondary": "#ffffff", "surface-variant": "#e0e3e5", "primary-container": "#0b2b53", "outline-variant": "#c4c6d0", "on-primary": "#ffffff", "secondary-fixed-dim": "#83cfff", "surface-bright": "#f7f9fb", "surface-tint": "#455f8a", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#4ae183", "tertiary": "#001c09", "on-secondary-fixed": "#001e2d", "primary-fixed-dim": "#adc7f8", "on-tertiary-fixed-variant": "#005228", "on-primary-fixed-variant": "#2c4770", "surface-dim": "#d8dadc", "tertiary-container": "#003316", "surface": "#f7f9fb", "on-secondary-fixed-variant": "#004c6b", "primary-fixed": "#d6e3ff", "surface-container-highest": "#e0e3e5", "surface-container-low": "#f2f4f6", "on-tertiary-fixed": "#00210c", "secondary-fixed": "#c6e7ff", "on-tertiary-container": "#00a858", "on-secondary-container": "#004a69", "outline": "#74777f", "on-surface": "#191c1e", "error": "#ba1a1a", "on-primary-fixed": "#001b3d", "on-primary-container": "#7993c1", "on-background": "#191c1e", "surface-container-lowest": "#ffffff", "surface-container-high": "#e6e8ea", "tertiary-fixed": "#6bfe9c", "on-error": "#ffffff", "inverse-on-surface": "#eff1f3", "surface-container": "#eceef0", "background": "#f7f9fb", "inverse-surface": "#2d3133", "on-error-container": "#93000a", "secondary-container": "#3dbeff", "error-container": "#ffdad6", "on-surface-variant": "#43474e", "secondary": "#00658d" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2.5rem" }, fontFamily: { "headline-md": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-md": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.015em", fontWeight: "600" }], "headline-lg": ["2rem", { lineHeight: "2.5rem", letterSpacing: "-0.02em", fontWeight: "600" }], "display-lg": ["3rem", { lineHeight: "3.5rem", letterSpacing: "-0.03em", fontWeight: "700" }], "title-md": ["1.125rem", { lineHeight: "1.625rem", letterSpacing: "-0.005em", fontWeight: "500" }], "label-md": ["0.8125rem", { lineHeight: "1.2rem", letterSpacing: "0.01em", fontWeight: "500" }], "headline-lg-mobile": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.015em", fontWeight: "600" }], "headline-sm": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.01em", fontWeight: "600" }], "body-md": ["0.875rem", { lineHeight: "1.45rem", letterSpacing: "0em", fontWeight: "400" }], "body-lg": ["1rem", { lineHeight: "1.6rem", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.04em", fontWeight: "600" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest flex flex-col justify-between z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><img alt="Learnova Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WjcEs7hjlueylY6VycQ4AVV5agJsnC3Q2hhAu1ZpAK5FZEjA08xzZxjEnsWFOp-EmsdIKKjlKGMjSvhgfV_exzPbhpCyZ6GNzOYtn1XoZ9X_nT5CubUqk5pMlyoB943Sz6qLbj2zqVdvXHxVPLKj3tHoS4dVnDNXTUpai9ZNJ_ClWcfW1WxebDgD4PZpGI2Ls0vZaIKOL1pnuyoTZfW98KtMHOkko2EjgzTTf2szeOujvADsf7KHxKo1s"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Learnova</span></div><div class="px-space-md py-space-xs"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline">Faculty Workspace</span></div><nav class="flex flex-col gap-space-xs px-space-md py-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-md rounded-xl"><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-title-md rounded-xl" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" data-path="curriculum-builder" href="#"><span class="material-symbols-outlined text-[20px]">auto_stories</span><span>Curriculum Builder</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" data-path="student-mastery" href="#"><span class="material-symbols-outlined text-[20px]">insights</span><span>Student Mastery</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" data-path="class-roster" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Class Roster</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-md"><div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-xl"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH5hdOTeaF7JRURc9VS0iSQO23xUmZfmSrdyVDkCTgfavW5RzhaAYCe_GEc0QAi386zCXb8-DS2oy-_kg8koeYEdziAu886AsQm27qBTEB_ugH7EnD_PAdT2qrGfpCVtuyFJdzo8ioI-7RQU212JQnSMiLt7C9ph0KF_xssgURYo_TQbsTrqA1XUFpKb7pqwm1ZAQIUo_YCddHfNfE8f0QXuGm4XGg5BQnh6WZWmvBsVQSmVOzOeEJ"/><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-primary font-semibold truncate">Dr. Sarah Jenkins</span><span class="font-label-sm text-label-sm text-outline truncate">Lead Instructor</span></div></div><a aria-label="Sign out" class="p-space-xs rounded-lg text-outline hover:text-error hover:bg-surface-container-high transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span></a></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-outline"><span class="material-symbols-outlined text-[18px]">school</span><span class="font-semibold text-primary">Teacher Portal</span><span class="material-symbols-outlined text-[14px]">chevron_right</span></div><div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-lg"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Fall 2025 • Grade 10 AP Physics</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full"></span></button><button aria-label="Help and documentation" class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">help</span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH5hdOTeaF7JRURc9VS0iSQO23xUmZfmSrdyVDkCTgfavW5RzhaAYCe_GEc0QAi386zCXb8-DS2oy-_kg8koeYEdziAu886AsQm27qBTEB_ugH7EnD_PAdT2qrGfpCVtuyFJdzo8ioI-7RQU212JQnSMiLt7C9ph0KF_xssgURYo_TQbsTrqA1XUFpKb7pqwm1ZAQIUo_YCddHfNfE8f0QXuGm4XGg5BQnh6WZWmvBsVQSmVOzOeEJ"/></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-space-xl py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- Header Area with Editorial Precision -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Real-Time Cohort Pulse</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-outline">Updated 2m ago</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Instructor Overview</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">AP Physics 1 • Period 3 • 28 enrolled students</p>
+</div>
+<!-- Quick Actions Header Strip -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest text-primary font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Roster Log</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-secondary text-on-secondary font-label-md text-label-md rounded-lg shadow-sm hover:opacity-95 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Create Announcement</span>
+</button>
+</div>
+</div>
+<!-- Top Summary Metrics: High Visual Impact & Crisp Legibility -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Metric 1: Active Students -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Active Participation</span>
+<span class="font-headline-md text-headline-md text-primary mt-space-xs">28 / 28</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-md flex items-center justify-between">
+<div class="inline-flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>+3 finished today's module</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">100% On-Track</span>
+</div>
+<!-- Decorative Micro spark visual -->
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container-low rounded-full pointer-events-none opacity-40"></div>
+</div>
+<!-- Metric 2: Pending Alerts -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Interventions Required</span>
+<div class="flex items-baseline gap-space-sm mt-space-xs">
+<span class="font-headline-md text-headline-md text-primary">4</span>
+<span class="font-label-sm text-label-sm text-error font-medium">Attention needed</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-error-container flex items-center justify-center text-on-error-container shrink-0">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-md flex items-center justify-between">
+<div class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>2 flagged on Newton's Laws</span>
+</div>
+<a class="font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#action-items-section">View 4 items</a>
+</div>
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-error-container/20 rounded-full pointer-events-none"></div>
+</div>
+<!-- Metric 3: Avg Mastery -->
+<div class="relative overflow-hidden bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Cohort Mastery Benchmark</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-md text-headline-md text-primary">84%</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Tier 1 Target</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">trending_up</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-md flex items-center justify-between">
+<div class="inline-flex items-center gap-space-xs text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+<span>↑ 6% this week</span>
+</div>
+<div class="w-20 bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 84%"></div>
+</div>
+</div>
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-tertiary-fixed/20 rounded-full pointer-events-none"></div>
+</div>
+</div>
+<!-- Primary Workspace Content (Bento / Asymmetrical Split) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Action Items & Priority Feed (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md" id="action-items-section">
+<!-- List Card Wrapper -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Filter Bar Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-primary">Action Items &amp; Attention Needed</h2>
+<span class="w-5 h-5 flex items-center justify-center text-label-sm bg-surface-container-high text-primary rounded-full font-semibold">4</span>
+</div>
+<!-- Interactive Tabs -->
+<div class="inline-flex p-1 bg-surface-container-low rounded-lg gap-space-xs" id="filterTabGroup">
+<button class="px-space-md py-1 font-label-md text-label-md rounded bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all tab-btn" data-filter="all" type="button">
+              All (4)
+            </button>
+<button class="px-space-md py-1 font-label-md text-label-md rounded text-on-surface-variant hover:text-primary transition-all tab-btn" data-filter="feedback" type="button">
+              Needs Feedback (2)
+            </button>
+<button class="px-space-md py-1 font-label-md text-label-md rounded text-on-surface-variant hover:text-primary transition-all tab-btn" data-filter="alert" type="button">
+              Struggling Alert (2)
+            </button>
+</div>
+</div>
+<!-- Action Items List -->
+<div class="flex flex-col gap-space-sm" id="actionItemsList">
+<!-- Item 1: Feedback - Marcus Vance -->
+<div class="action-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="feedback">
+<div class="flex items-start gap-space-md">
+<img class="w-11 h-11 rounded-full object-cover shrink-0" data-alt="Close up photographic portrait of high school student Marcus Vance wearing a casual collegiate grey hoodie looking focused in a physics laboratory classroom with natural afternoon light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa35vSml48U5ZOSMWf-QkDEJ_Xgd7apN_amR4r8EZtCUSBxWdv2JeXYDyOtxy9T89BzhaUbafE5ZH7S7TzkKbnR-j5FgXAYauj_SNzfqbWl1a94nTVLIvLn2_90uK6WZqt13vbnWMrXODJdyZbokFUAXqHWfbcX1Jxw6I_MvrObDVi56Ot350NtY-oRod1rAYapeWDPYLmfmdNWsWqdQHirtsoGB9jhX7i0zZBVvncIEwKzUXgoZ1g"/>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-fixed px-space-xs py-0.5 rounded font-semibold uppercase">Lab Review</span>
+<span class="font-label-sm text-label-sm text-outline">Submitted 42m ago</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-1 font-semibold">Review Lab Report: Marcus Vance – Circular Motion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1">Centripetal Acceleration Apparatus data sheet and graph derivations ready for review.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<button class="px-space-md py-space-sm bg-secondary text-on-secondary rounded-lg font-label-md text-label-md font-semibold hover:opacity-90 shadow-sm transition-all flex items-center gap-space-xs" type="button">
+<span>Review Submission</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Struggling Alert - Maya Lin -->
+<div class="action-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="alert">
+<div class="flex items-start gap-space-md">
+<img class="w-11 h-11 rounded-full object-cover shrink-0" data-alt="Portrait photo of high school student Maya Lin seated in an active science lecture hall looking thoughtful with gentle daylight filtering through classroom windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWijarjycwiy8PN0cmAGBbO6NJSS_DbB50SHcmdlIJDiiJFsoifUWfgqlJJAXJl6XJ7P8llnkgm-27itCPmKtZVg5_tCsAEPEPMDZMXks6hGKUflNzX2MUZ7zw1zIYzz6G1zwe7m5t_6mfKL617_VExgzEXSYm32uvHf4hbzdnnH9Du0m98OZ4bVlkCY5w8fZHhpsY02V-EXrK_M-8QTHqA5dFDMANWPxc15GLqFCUcVsGrUrxNqX4"/>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-error-container bg-error-container px-space-xs py-0.5 rounded font-semibold uppercase flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    Mastery Alert
+                  </span>
+<span class="font-label-sm text-label-sm text-outline">3 Failed Attempts</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-1 font-semibold">Mastery Intervention: Maya Lin has attempted 'Friction Forces' quiz 3x</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1">Average score 52%. Identified weak conceptual grasp on Kinetic vs. Static Friction limits.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<button class="px-space-md py-space-sm bg-primary-container text-on-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-primary transition-all flex items-center gap-space-xs" type="button">
+<span>Assign Practice</span>
+<span class="material-symbols-outlined text-[16px]">assignment_add</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Alert / Action - Curriculum Release -->
+<div class="action-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="alert">
+<div class="flex items-start gap-space-md">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">event_upcoming</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant bg-tertiary-fixed px-space-xs py-0.5 rounded font-semibold uppercase">Scheduled Release</span>
+<span class="font-label-sm text-label-sm text-outline">Tomorrow at 8:00 AM</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-1 font-semibold">Curriculum Check: Unit 4 'Momentum &amp; Impulse' scheduled to unlock tomorrow</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1">Ensure homework question bank #4 and simulation links are active.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<button class="px-space-md py-space-sm bg-surface-container-lowest text-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-all flex items-center gap-space-xs" type="button">
+<span>View Schedule</span>
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+</button>
+</div>
+</div>
+<!-- Item 4: Feedback - Elena Gomez -->
+<div class="action-card p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="feedback">
+<div class="flex items-start gap-space-md">
+<img class="w-11 h-11 rounded-full object-cover shrink-0" data-alt="Portrait photography of Elena Gomez, a senior high school student with braided hair smiling confidently in an airy STEM study common space with warm ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAecJo6a7UVALKCg38sgbCH9tduUx7s7E_7PaCbfM-h74TH0WnqKn2zO5k1ThGMfy8a0eEUralwLtr9yIYwl6PzaevBgpqs2sktFaWGwCriytfde2BnH2n29O6M6uw-c4w-DYcZIHtTTZM9bX1l0_gxpfPl4GB3VfFzKaPt8IFVydGIskXcYNRS8jXW2adiEt4mHa1USLJT7F-jM5NXj6a4wU5XRbKuePIHhgZePzcxGLbNTp7RxMBY"/>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-fixed px-space-xs py-0.5 rounded font-semibold uppercase">Clarification Note</span>
+<span class="font-label-sm text-label-sm text-outline">1h ago</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-1 font-semibold">Feedback Requested: Elena Gomez on 'Gravity Vectors'</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1">“Could you explain problem 4B step 2 regarding orbital height decay?”</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<button class="px-space-md py-space-sm bg-secondary text-on-secondary rounded-lg font-label-md text-label-md font-semibold hover:opacity-90 shadow-sm transition-all flex items-center gap-space-xs" type="button">
+<span>Reply</span>
+<span class="material-symbols-outlined text-[16px]">reply</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Concept Mastery Distribution Insight (Inline Minimal Visual) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Current Unit Topic Breakdown</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Unit 3: Circular Motion &amp; Gravitation</span>
+</div>
+<!-- Compact Topic Bars -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-primary font-medium">Centripetal Force</span>
+<span class="text-on-tertiary-container font-semibold">92%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-primary font-medium">Orbital Velocity</span>
+<span class="text-secondary font-semibold">81%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 81%"></div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-primary font-medium">Friction &amp; Banked Turns</span>
+<span class="text-error font-semibold">68%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 68%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar / Class Schedule & Instructor Tools (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Today's Live Session Highlight Card -->
+<div class="bg-primary text-on-primary p-space-lg rounded-xl shadow-md relative overflow-hidden flex flex-col gap-space-md">
+<!-- Abstract gradient depth glow -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between z-10">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-on-primary/10 rounded-lg text-secondary-fixed">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">Live in 35 mins</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">podium</span>
+</div>
+<div class="flex flex-col z-10">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Today's Live Session</span>
+<h3 class="font-headline-sm text-headline-sm text-on-primary mt-1">10:15 AM – Room 402</h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim mt-space-xs">Topic: Banked Curves &amp; Critical Speed Derivations with Live Lab Sensors</p>
+</div>
+<div class="pt-space-sm flex items-center gap-space-sm z-10">
+<button class="w-full py-space-sm bg-secondary text-on-secondary rounded-lg font-label-md text-label-md font-semibold hover:opacity-90 transition-all flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">co_present</span>
+<span>Launch Presentation Deck</span>
+</button>
+</div>
+</div>
+<!-- Compact Today's Schedule Timeline -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary">Day Agenda</h3>
+<span class="font-label-sm text-label-sm text-outline">Oct 24, Thursday</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Period 1 -->
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span class="w-0.5 h-10 bg-surface-container-high my-1"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">08:30 – 09:45 AM</span>
+<span class="font-title-md text-title-md text-primary font-medium">Physics Prep &amp; Office Hours</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Office 312 • 3 students visited</span>
+</div>
+</div>
+<!-- Period 3 (Current/Upcoming) -->
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-secondary-fixed/50"></span>
+<span class="w-0.5 h-10 bg-surface-container-high my-1"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">10:15 – 11:45 AM</span>
+<span class="text-[10px] bg-secondary-fixed text-on-secondary-fixed px-1.5 py-0.2 rounded font-bold uppercase">Next</span>
+</div>
+<span class="font-title-md text-title-md text-primary font-medium">AP Physics 1 (Period 3)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Room 402 • 28 Students</span>
+</div>
+</div>
+<!-- Period 5 -->
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">01:15 – 02:45 PM</span>
+<span class="font-title-md text-title-md text-primary font-medium">Honors Mechanics (Period 5)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Room 402 • 24 Students</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Resource Hub Mini Box -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">science</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">PhET Simulations</span>
+<span class="font-label-sm text-label-sm text-outline">Gravity &amp; Orbits Sandbox</span>
+</div>
+</div>
+<button aria-label="Open simulator" class="p-space-xs text-secondary hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Vanilla Filter Interaction Logic -->
+<script>
+  (function initDashboardFilter() {
+    const filterTabs = document.querySelectorAll('#filterTabGroup .tab-btn');
+    const cards = document.querySelectorAll('#actionItemsList .action-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Toggle Active styles
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+        tab.classList.remove('text-on-surface-variant');
+
+        const filterValue = tab.getAttribute('data-filter');
+
+        // Filter cards
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterValue === 'all' || category === filterValue) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
+</script></main></div></body></html>

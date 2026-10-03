@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#adc7f8", "primary": "#001634", "on-secondary": "#ffffff", "surface-variant": "#e0e3e5", "primary-container": "#0b2b53", "outline-variant": "#c4c6d0", "on-primary": "#ffffff", "secondary-fixed-dim": "#83cfff", "surface-bright": "#f7f9fb", "surface-tint": "#455f8a", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#4ae183", "tertiary": "#001c09", "on-secondary-fixed": "#001e2d", "primary-fixed-dim": "#adc7f8", "on-tertiary-fixed-variant": "#005228", "on-primary-fixed-variant": "#2c4770", "surface-dim": "#d8dadc", "tertiary-container": "#003316", "surface": "#f7f9fb", "on-secondary-fixed-variant": "#004c6b", "primary-fixed": "#d6e3ff", "surface-container-highest": "#e0e3e5", "surface-container-low": "#f2f4f6", "on-tertiary-fixed": "#00210c", "secondary-fixed": "#c6e7ff", "on-tertiary-container": "#00a858", "on-secondary-container": "#004a69", "outline": "#74777f", "on-surface": "#191c1e", "error": "#ba1a1a", "on-primary-fixed": "#001b3d", "on-primary-container": "#7993c1", "on-background": "#191c1e", "surface-container-lowest": "#ffffff", "surface-container-high": "#e6e8ea", "tertiary-fixed": "#6bfe9c", "on-error": "#ffffff", "inverse-on-surface": "#eff1f3", "surface-container": "#eceef0", "background": "#f7f9fb", "inverse-surface": "#2d3133", "on-error-container": "#93000a", "secondary-container": "#3dbeff", "error-container": "#ffdad6", "on-surface-variant": "#43474e", "secondary": "#00658d" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2.5rem" }, fontFamily: { "headline-md": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-md": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.015em", fontWeight: "600" }], "headline-lg": ["2rem", { lineHeight: "2.5rem", letterSpacing: "-0.02em", fontWeight: "600" }], "display-lg": ["3rem", { lineHeight: "3.5rem", letterSpacing: "-0.03em", fontWeight: "700" }], "title-md": ["1.125rem", { lineHeight: "1.625rem", letterSpacing: "-0.005em", fontWeight: "500" }], "label-md": ["0.8125rem", { lineHeight: "1.2rem", letterSpacing: "0.01em", fontWeight: "500" }], "headline-lg-mobile": ["1.5rem", { lineHeight: "2rem", letterSpacing: "-0.015em", fontWeight: "600" }], "headline-sm": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.01em", fontWeight: "600" }], "body-md": ["0.875rem", { lineHeight: "1.45rem", letterSpacing: "0em", fontWeight: "400" }], "body-lg": ["1rem", { lineHeight: "1.6rem", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.04em", fontWeight: "600" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest flex flex-col justify-between z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><img alt="Learnova Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WjcEs7hjlueylY6VycQ4AVV5agJsnC3Q2hhAu1ZpAK5FZEjA08xzZxjEnsWFOp-EmsdIKKjlKGMjSvhgfV_exzPbhpCyZ6GNzOYtn1XoZ9X_nT5CubUqk5pMlyoB943Sz6qLbj2zqVdvXHxVPLKj3tHoS4dVnDNXTUpai9ZNJ_ClWcfW1WxebDgD4PZpGI2Ls0vZaIKOL1pnuyoTZfW98KtMHOkko2EjgzTTf2szeOujvADsf7KHxKo1s"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Learnova</span></div><div class="px-space-md py-space-xs"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-outline">Faculty Workspace</span></div><nav class="flex flex-col gap-space-xs px-space-md py-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-md rounded-xl"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-title-md rounded-xl" data-path="curriculum-builder" href="#"><span class="material-symbols-outlined text-[20px]">auto_stories</span><span>Curriculum Builder</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" data-path="student-mastery" href="#"><span class="material-symbols-outlined text-[20px]">insights</span><span>Student Mastery</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" data-path="class-roster" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span>Class Roster</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-md"><div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-xl"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH5hdOTeaF7JRURc9VS0iSQO23xUmZfmSrdyVDkCTgfavW5RzhaAYCe_GEc0QAi386zCXb8-DS2oy-_kg8koeYEdziAu886AsQm27qBTEB_ugH7EnD_PAdT2qrGfpCVtuyFJdzo8ioI-7RQU212JQnSMiLt7C9ph0KF_xssgURYo_TQbsTrqA1XUFpKb7pqwm1ZAQIUo_YCddHfNfE8f0QXuGm4XGg5BQnh6WZWmvBsVQSmVOzOeEJ"/><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-primary font-semibold truncate">Dr. Sarah Jenkins</span><span class="font-label-sm text-label-sm text-outline truncate">Lead Instructor</span></div></div><a aria-label="Sign out" class="p-space-xs rounded-lg text-outline hover:text-error hover:bg-surface-container-high transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span></a></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-outline"><span class="material-symbols-outlined text-[18px]">school</span><span class="font-semibold text-primary">Teacher Portal</span><span class="material-symbols-outlined text-[14px]">chevron_right</span></div><div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-lg"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Fall 2025 • Grade 10 AP Physics</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full"></span></button><button aria-label="Help and documentation" class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">help</span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH5hdOTeaF7JRURc9VS0iSQO23xUmZfmSrdyVDkCTgfavW5RzhaAYCe_GEc0QAi386zCXb8-DS2oy-_kg8koeYEdziAu886AsQm27qBTEB_ugH7EnD_PAdT2qrGfpCVtuyFJdzo8ioI-7RQU212JQnSMiLt7C9ph0KF_xssgURYo_TQbsTrqA1XUFpKb7pqwm1ZAQIUo_YCddHfNfE8f0QXuGm4XGg5BQnh6WZWmvBsVQSmVOzOeEJ"/></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-space-xl py-space-lg"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient background pulse -->
+<div class="relative w-full max-w-7xl mx-auto space-y-space-lg pb-16">
+<!-- Top Action & Context Header Bar -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="space-y-space-xs min-w-0">
+<div class="flex items-center gap-space-xs text-outline font-label-sm uppercase tracking-wider">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Course Architecture · Fall 2025</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Curriculum Builder</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 flex-wrap">
+<span class="font-semibold text-primary">Physics 101: Mechanics &amp; Dynamics</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>4 Units</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>18 Lessons</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="inline-flex items-center gap-1 text-on-tertiary-container font-label-sm">
+<span class="material-symbols-outlined text-[14px]">cloud_done</span> Autosaved 2m ago
+          </span>
+</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<!-- Secondary Ghost Outlined Button -->
+<button class="group flex items-center gap-space-xs px-space-md py-2.5 bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary">visibility</span>
+<span>Preview Student View</span>
+</button>
+<!-- Primary Cyan Button -->
+<button class="flex items-center gap-space-xs px-space-lg py-2.5 bg-secondary-container hover:bg-[#20b2f5] text-primary font-headline-sm text-label-md font-semibold rounded-lg shadow-sm transition-all hover:shadow" id="publishAllBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+<span>Publish Changes</span>
+</button>
+</div>
+</header>
+<!-- Operational Metrics Banner / Progress Strip -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Total Units</span>
+<p class="font-headline-sm text-headline-sm text-primary">03 <span class="text-body-md font-normal text-outline">/ 04</span></p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed-dim/20 flex items-center justify-center text-on-tertiary-container shrink-0">
+<span class="material-symbols-outlined">task_alt</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Published Content</span>
+<p class="font-headline-sm text-headline-sm text-primary">82% <span class="font-label-sm text-on-tertiary-container font-medium">+14% this wk</span></p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Classroom Time</span>
+<p class="font-headline-sm text-headline-sm text-primary">16.4 <span class="text-body-md font-normal text-outline">hrs total</span></p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined">sort</span>
+</div>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Structure Mode</span>
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary">Course &gt; Unit &gt; Lesson</span>
+<span class="text-outline font-label-sm text-[11px] bg-surface-container px-1.5 py-0.5 rounded">Flat Hierarchy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Curriculum Tree Container -->
+<div class="space-y-space-lg" id="curriculumCanvas">
+<!-- TOPIC 1 BLOCK -->
+<section class="topic-card bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+<!-- Topic Header (Drag + Expand) -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-lowest cursor-pointer select-none" onclick="toggleTopic(this)">
+<div class="flex items-center gap-space-md min-w-0">
+<!-- Drag Handle -->
+<button aria-label="Reorder unit" class="cursor-grab active:cursor-grabbing text-outline hover:text-primary transition-colors p-1 rounded" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-headline-sm text-[13px] flex items-center justify-center shrink-0 font-bold">1</span>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-headline-sm text-headline-sm text-primary">Kinematics in One Dimension</h2>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold uppercase tracking-wider bg-tertiary-fixed/30 text-on-tertiary-container">
+                    100% Published
+                  </span>
+</div>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">4 Lessons · Estimated duration: 3.5 hrs · Motion, Vectors &amp; Free Fall</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button aria-label="Topic options" class="p-1.5 text-outline hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" onclick="event.stopPropagation();" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-outline transition-transform duration-200 chevron-icon">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Lessons List Inner Content -->
+<div class="topic-content p-space-md pt-0 space-y-space-xs">
+<!-- Lesson 1.1 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-outline cursor-grab">drag_handle</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-outline font-semibold">1.1</span>
+<p class="font-title-md text-title-md text-primary font-medium truncate">Displacement, Velocity &amp; Acceleration</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mt-0.5">
+<span>Interactive Reading</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">timer</span> 20m</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<span class="px-2.5 py-1 rounded text-label-sm font-semibold uppercase tracking-wider bg-[#DCFCE7] text-[#15803D]">
+                Published
+              </span>
+<div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<button aria-label="Edit lesson" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="More options" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lesson 1.2 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-outline cursor-grab">drag_handle</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">quiz</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-outline font-semibold">1.2</span>
+<p class="font-title-md text-title-md text-primary font-medium truncate">Kinematic Equations for Constant Acceleration</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mt-0.5">
+<span>Practice Quiz</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">timer</span> 15m</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>10 Questions</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<span class="px-2.5 py-1 rounded text-label-sm font-semibold uppercase tracking-wider bg-[#DCFCE7] text-[#15803D]">
+                Published
+              </span>
+<div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<button aria-label="Edit lesson" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="More options" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lesson 1.3 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-outline cursor-grab">drag_handle</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">science</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-outline font-semibold">1.3</span>
+<p class="font-title-md text-title-md text-primary font-medium truncate">Free Fall &amp; Gravitational Acceleration</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mt-0.5">
+<span>Virtual Lab Simulation</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">timer</span> 45m</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Interactive Apparatus</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<span class="px-2.5 py-1 rounded text-label-sm font-semibold uppercase tracking-wider bg-[#DCFCE7] text-[#15803D]">
+                Published
+              </span>
+<div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<button aria-label="Edit lesson" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="More options" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Action: Simple Bright Cyan Button -->
+<div class="pt-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-secondary-container/15 hover:bg-secondary-container/25 text-primary font-headline-sm text-label-md font-semibold flex items-center justify-center gap-space-xs transition-colors" onclick="quickAddLesson(1)" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">add_circle</span>
+<span class="text-secondary">+ Add Lesson</span>
+</button>
+</div>
+</div>
+</section>
+<!-- TOPIC 2 BLOCK -->
+<section class="topic-card bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+<!-- Topic Header -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-lowest cursor-pointer select-none" onclick="toggleTopic(this)">
+<div class="flex items-center gap-space-md min-w-0">
+<button aria-label="Reorder unit" class="cursor-grab active:cursor-grabbing text-outline hover:text-primary transition-colors p-1 rounded" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-headline-sm text-[13px] flex items-center justify-center shrink-0 font-bold">2</span>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-headline-sm text-headline-sm text-primary">Newton's Laws of Motion</h2>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold uppercase tracking-wider bg-[#FEF3C7] text-[#B45309]">
+                    In Progress
+                  </span>
+</div>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">3 Lessons · Estimated duration: 2.8 hrs · Dynamics, Mass &amp; Friction Forces</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button aria-label="Topic options" class="p-1.5 text-outline hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" onclick="event.stopPropagation();" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-outline transition-transform duration-200 chevron-icon">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Lessons List -->
+<div class="topic-content p-space-md pt-0 space-y-space-xs">
+<!-- Lesson 2.1 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-outline cursor-grab">drag_handle</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">smart_display</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-outline font-semibold">2.1</span>
+<p class="font-title-md text-title-md text-primary font-medium truncate">First Law: Inertia &amp; Mass</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mt-0.5">
+<span>Video &amp; Checkpoint</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">timer</span> 18m</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<span class="px-2.5 py-1 rounded text-label-sm font-semibold uppercase tracking-wider bg-[#DCFCE7] text-[#15803D]">
+                Published
+              </span>
+<div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<button aria-label="Edit lesson" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="More options" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lesson 2.2 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-outline cursor-grab">drag_handle</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">assignment</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-outline font-semibold">2.2</span>
+<p class="font-title-md text-title-md text-primary font-medium truncate">Second Law: Force, Mass, Acceleration F=ma</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mt-0.5">
+<span>Problem Set</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">timer</span> 30m</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>8 Core Problems</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<span class="px-2.5 py-1 rounded text-label-sm font-semibold uppercase tracking-wider bg-[#DCFCE7] text-[#15803D]">
+                Published
+              </span>
+<div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<button aria-label="Edit lesson" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="More options" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lesson 2.3 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-outline cursor-grab">drag_handle</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">rate_review</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-outline font-semibold">2.3</span>
+<p class="font-title-md text-title-md text-primary font-medium truncate">Friction &amp; Free Body Diagrams</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mt-0.5">
+<span>Diagnostic Exercise</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">timer</span> 25m</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-error font-medium">Needs Answer Key</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<span class="px-2.5 py-1 rounded text-label-sm font-semibold uppercase tracking-wider bg-surface-container-highest text-on-surface-variant">
+                Draft
+              </span>
+<div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<button aria-label="Edit lesson" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="More options" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Action: Simple Bright Cyan Button -->
+<div class="pt-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-secondary-container/15 hover:bg-secondary-container/25 text-primary font-headline-sm text-label-md font-semibold flex items-center justify-center gap-space-xs transition-colors" onclick="quickAddLesson(2)" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">add_circle</span>
+<span class="text-secondary">+ Add Lesson</span>
+</button>
+</div>
+</div>
+</section>
+<!-- TOPIC 3 BLOCK -->
+<section class="topic-card bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+<!-- Topic Header -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-lowest cursor-pointer select-none" onclick="toggleTopic(this)">
+<div class="flex items-center gap-space-md min-w-0">
+<button aria-label="Reorder unit" class="cursor-grab active:cursor-grabbing text-outline hover:text-primary transition-colors p-1 rounded" type="button">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</button>
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-headline-sm text-[13px] flex items-center justify-center shrink-0 font-bold">3</span>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-headline-sm text-headline-sm text-primary">Work, Energy &amp; Power</h2>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold uppercase tracking-wider bg-surface-container-highest text-on-surface-variant">
+                    2 Lessons
+                  </span>
+</div>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">Conservative Systems, Conservation of Energy</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button aria-label="Topic options" class="p-1.5 text-outline hover:text-primary hover:bg-surface-container-low rounded-lg transition-colors" onclick="event.stopPropagation();" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-outline transition-transform duration-200 chevron-icon">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Lessons List -->
+<div class="topic-content p-space-md pt-0 space-y-space-xs">
+<!-- Lesson 3.1 -->
+<div class="group flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-outline cursor-grab">drag_handle</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-outline font-semibold">3.1</span>
+<p class="font-title-md text-title-md text-primary font-medium truncate">Kinetic vs Potential Energy</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mt-0.5">
+<span>Interactive Lesson</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">timer</span> 35m</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<span class="px-2.5 py-1 rounded text-label-sm font-semibold uppercase tracking-wider bg-surface-container-highest text-on-surface-variant">
+                Draft
+              </span>
+<div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<button aria-label="Edit lesson" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="More options" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Action: Simple Bright Cyan Button -->
+<div class="pt-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-secondary-container/15 hover:bg-secondary-container/25 text-primary font-headline-sm text-label-md font-semibold flex items-center justify-center gap-space-xs transition-colors" onclick="quickAddLesson(3)" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">add_circle</span>
+<span class="text-secondary">+ Add Lesson</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Action Container: Dashed + Add Unit Block -->
+<button class="w-full py-8 px-space-md bg-surface-container-lowest/60 hover:bg-surface-container-lowest rounded-xl shadow-sm transition-all duration-200 group flex flex-col items-center justify-center gap-space-xs" id="addNewTopicBtn" type="button">
+<div class="w-12 h-12 rounded-xl bg-surface-container group-hover:bg-secondary-container text-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors mt-1">+ Add New Topic / Unit</span>
+<p class="font-label-sm text-label-sm text-outline">Configure learning competencies, sequence, and pedagogical tags</p>
+</button>
+<!-- Visual Media Attachment Section (Educational Lab Resource) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row items-center gap-space-lg">
+<div class="w-full md:w-1/3 h-44 rounded-xl overflow-hidden shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern physics laboratory demonstration apparatus with pendulum and sensor instruments on a dark oak research desk, illuminated by soft natural morning daylight with cool cyan highlights reflecting the clean academic laboratory setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5tK-t3Xy3vh0OAdvEgP_sBkArCqUwXm5WDmuiOcXPo0X_cdOVOtT82NpjzDj3AqRAbGMIFrUHdHYJuQO1r775Cvoxn3FRGjYSHXTboaS1wCYHpGD1YFobD_jSCGTzGuF0cq7qVYdlR9YxfRFy5Mfe2xnN6rCGlI2ud-3X7FkE08ismlaNMt6UNmAqNRHkUwDsFH_Cec1XS8hQXCo6fxt1BA8z4St5LMSuwCKXxEL1gAMSrMaRXB1z"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex items-end p-space-md">
+<span class="text-on-primary font-label-sm font-semibold">Standard AP Apparatus Kit</span>
+</div>
+</div>
+<div class="space-y-space-xs flex-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Lab Sync Enabled</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Connected Virtual Lab Environment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Lessons configured in this curriculum automatically link with the Learnova Interactive WebGL Simulation Engine. Students can verify Newtonian calculations using real-time parameter adjusters directly in their browsers.
+        </p>
+<div class="pt-2 flex items-center gap-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">verified</span> 4 Labs Verified
+          </span>
+<a class="font-label-md text-label-md text-secondary font-semibold hover:underline flex items-center gap-1" href="#">
+            Manage Physics Assets <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleTopic(headerEl) {
+    const card = headerEl.closest('.topic-card');
+    const content = card.querySelector('.topic-content');
+    const chevron = headerEl.querySelector('.chevron-icon');
+    
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      chevron.classList.remove('-rotate-90');
+    } else {
+      content.classList.add('hidden');
+      chevron.classList.add('-rotate-90');
+    }
+  }
+
+  function quickAddLesson(topicNum) {
+    const title = prompt(`Enter title for new lesson in Unit ${topicNum}:`, "New Core Concept");
+    if (!title) return;
+    
+    const card = document.querySelectorAll('.topic-card')[topicNum - 1];
+    const content = card.querySelector('.topic-content');
+    const addBtnWrapper = content.lastElementChild;
+    
+    const newLessonDiv = document.createElement('div');
+    newLessonDiv.className = "group flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-low transition-colors";
+    newLessonDiv.innerHTML = `
+      <div class="flex items-center gap-space-md min-w-0">
+        <span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-outline cursor-grab">drag_handle</span>
+        <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+          <span class="material-symbols-outlined text-[18px]">draft</span>
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-space-xs">
+            <span class="font-label-sm text-outline font-semibold">${topicNum}.${content.children.length}</span>
+            <p class="font-title-md text-title-md text-primary font-medium truncate">${title}</p>
+          </div>
+          <div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline mt-0.5">
+            <span>New Module</span>
+            <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+            <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">timer</span> 15m</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <span class="px-2.5 py-1 rounded text-label-sm font-semibold uppercase tracking-wider bg-surface-container-highest text-on-surface-variant">
+          Draft
+        </span>
+        <div class="flex items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+          <button type="button" aria-label="Edit lesson" class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-colors">
+            <span class="material-symbols-outlined text-[18px]">edit</span>
+          </button>
+        </div>
+      </div>
+    `;
+    
+    content.insertBefore(newLessonDiv, addBtnWrapper);
+  }
+
+  document.getElementById('addNewTopicBtn').addEventListener('click', () => {
+    const topicName = prompt("Enter title for New Topic/Unit:", "Thermal Physics & Thermodynamics");
+    if (!topicName) return;
+
+    const canvas = document.getElementById('curriculumCanvas');
+    const count = canvas.children.length + 1;
+    
+    const section = document.createElement('section');
+    section.className = "topic-card bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all duration-200";
+    section.innerHTML = `
+      <div class="flex items-center justify-between p-space-md bg-surface-container-lowest cursor-pointer select-none" onclick="toggleTopic(this)">
+        <div class="flex items-center gap-space-md min-w-0">
+          <button type="button" aria-label="Reorder unit" class="cursor-grab active:cursor-grabbing text-outline hover:text-primary transition-colors p-1 rounded">
+            <span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+          </button>
+          <div class="flex items-center gap-space-sm min-w-0">
+            <span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-headline-sm text-[13px] flex items-center justify-center shrink-0 font-bold">${count}</span>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h2 class="font-headline-sm text-headline-sm text-primary">${topicName}</h2>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold uppercase tracking-wider bg-surface-container-highest text-on-surface-variant">
+                  0 Lessons &middot; Unpublished
+                </span>
+              </div>
+              <p class="font-label-sm text-label-sm text-outline mt-0.5">Newly initialized course section</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-sm shrink-0">
+          <div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-outline transition-transform duration-200 chevron-icon">
+            <span class="material-symbols-outlined text-[20px]">expand_more</span>
+          </div>
+        </div>
+      </div>
+      <div class="topic-content p-space-md pt-0 space-y-space-xs">
+        <div class="pt-space-xs">
+          <button type="button" onclick="quickAddLesson(${count})" class="w-full py-2.5 px-space-md rounded-lg bg-secondary-container/15 hover:bg-secondary-container/25 text-primary font-headline-sm text-label-md font-semibold flex items-center justify-center gap-space-xs transition-colors">
+            <span class="material-symbols-outlined text-[18px] text-secondary">add_circle</span>
+            <span class="text-secondary">+ Add Lesson</span>
+          </button>
+        </div>
+      </div>
+    `;
+    canvas.appendChild(section);
+  });
+
+  document.getElementById('publishAllBtn').addEventListener('click', function() {
+    const orig = this.innerHTML;
+    this.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Publishing...</span>`;
+    this.disabled = true;
+    setTimeout(() => {
+      this.innerHTML = `<span class="material-symbols-outlined text-[18px]">done_all</span><span>All Saved &amp; Live</span>`;
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.disabled = false;
+      }, 2000);
+    }, 700);
+  });
+</script></main></div></body></html>

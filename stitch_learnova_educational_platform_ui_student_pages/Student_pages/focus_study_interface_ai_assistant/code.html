@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Learnova Student Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-bright":"#f7f9fb","on-secondary-fixed":"#001e2d","surface-container":"#eceef0","error":"#ba1a1a","on-tertiary":"#ffffff","tertiary-container":"#003316","surface-tint":"#455f8a","on-secondary":"#ffffff","on-error":"#ffffff","surface-container-highest":"#e0e3e5","on-error-container":"#93000a","on-tertiary-fixed":"#00210c","primary-fixed":"#d6e3ff","primary":"#001634","tertiary-fixed":"#6bfe9c","on-primary-container":"#7993c1","surface-variant":"#e0e3e5","surface-container-low":"#f2f4f6","secondary-container":"#3dbeff","on-primary-fixed-variant":"#2c4770","inverse-surface":"#2d3133","surface-container-high":"#e6e8ea","on-tertiary-fixed-variant":"#005228","outline-variant":"#c4c6d0","on-background":"#191c1e","on-surface-variant":"#43474e","secondary-fixed-dim":"#83cfff","surface":"#f7f9fb","secondary":"#00658d","error-container":"#ffdad6","secondary-fixed":"#c6e7ff","on-secondary-fixed-variant":"#004c6b","on-surface":"#191c1e","primary-container":"#0b2b53","on-primary":"#ffffff","on-tertiary-container":"#00a858","inverse-primary":"#adc7f8","outline":"#74777f","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#4ae183","background":"#f7f9fb","inverse-on-surface":"#eff1f3","tertiary":"#001c09","on-secondary-container":"#004a69","on-primary-fixed":"#001b3d","primary-fixed-dim":"#adc7f8","surface-dim":"#d8dadc"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-mobile":"1rem","space-sm":"0.5rem","gutter":"1.5rem","space-lg":"1.5rem","space-xs":"0.25rem","space-md":"1rem","margin":"2rem","margin-mobile":"1rem","space-xl":"2.5rem"},"fontFamily":{"display-lg":["Inter"],"title-md":["Inter"],"headline-lg-mobile":["Inter"],"headline-sm":["Inter"],"body-lg":["Inter"],"label-sm":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"headline-lg":["Inter"],"headline-md":["Inter"]},"fontSize":{"display-lg":["3rem",{"lineHeight":"3.5rem","letterSpacing":"-0.03em","fontWeight":"700"}],"title-md":["1.125rem",{"lineHeight":"1.625rem","letterSpacing":"-0.005em","fontWeight":"500"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.6rem","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.04em","fontWeight":"600"}],"label-md":["0.8125rem",{"lineHeight":"1.2rem","letterSpacing":"0.01em","fontWeight":"500"}],"body-md":["0.875rem",{"lineHeight":"1.45rem","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-surface-container-highest shadow-[0_1px_3px_rgba(11,43,83,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0b2b53
+- Font: inter
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UztSBMdtCmnAtcD98oTgU6i9p8W1a2ost04TGgVIRad3CMI7vFcM6krwyrE-PdEHFHvOfy7DI-iswuDIdfDOEfLXlDwjl_iVQeQcBhfFJs2dvdyxAq0hUN1Szja7ZVAXzCe13pvaOPDJen-FXFimUBFHGLm9ZbboQuiLpyF9GDASffe2INv1QA1MG_eTly-mcDpMHmcofIFNL3vC7J7rdTkF6xmrx5F4ut0O1AYUgJy4j02wdklBNJ3A"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Learnova</span></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary-container font-headline-sm border-b-2 border-primary-container pb- space-xs"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py- space-sm" data-path="my-courses" href="#">My Courses</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py- space-sm" data-path="learning-path" href="#">Learning Path</a><a aria-current="page" class="transition-colors py- text-primary-container font-headline-sm border-b-2 border-primary-container pb- space-xs" data-path="focus-study" href="#">Focus Study</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py- space-sm" data-path="progress-and-analytics" href="#">Progress &amp; Analytics</a></nav></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-tertiary-container/10 px-space-sm py- space-xs rounded-lg border border-tertiary-fixed-dim/30"><span class="material-symbols-outlined text-on-tertiary-container text-[18px]">local_fire_department</span><span class="font-label-sm text-label-sm text-on-tertiary-container tracking-normal">14-Day Streak</span></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py- space-xs rounded-lg border border-outline-variant"><span class="material-symbols-outlined text-secondary text-[18px]">bolt</span><span class="font-label-sm text-label-sm text-primary font-bold">1,420 XP</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ring-2 ring-surface-container-highest"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-none">Alex Rivera</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt- space-xs">Student</span></div></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1440px] mx-auto px-gutter py-space-lg">
+<!-- Top Utility & Focus Mode Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md mb-space-lg">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span>AP Physics 1</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Newton's Laws &amp; Force Systems</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-primary font-semibold truncate max-w-xs md:max-w-md">Lesson 3.2: Calculating Net Force in 2D</span>
+</nav>
+<!-- Focus Mode Pill / Controls -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-space-xs rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Deep Focus Active</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors" id="toggle-zen-btn" title="Toggle minimalist view">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+<span class="hidden sm:inline">Zen View</span>
+</button>
+</div>
+</div>
+<!-- Main Workspace: 70/30 Asymmetrical Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Main Study Area (70% - lg:col-span-8 or 8.4 in 12-col) -->
+<article class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Lesson Header Card -->
+<header class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-space-xs rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm">
+                Step 2 of 4
+              </span>
+<span class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                18 min read &amp; simulator
+              </span>
+</div>
+<!-- Quick bookmark and notes counter -->
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<button class="p-space-xs rounded hover:bg-surface-container transition-colors" title="Bookmark section">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<button class="p-space-xs rounded hover:bg-surface-container transition-colors" title="Add personal note">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+            Calculating Net Force and Acceleration in 2D Systems
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Master orthogonal vector resolution, tilted frame transformation, and downhill dynamic equilibrium for inclined physics problems.
+          </p>
+<!-- Overall Module Progress Strip -->
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mt-space-xs overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+</div>
+</header>
+<!-- Core Academic Editorial Canvas -->
+<div class="bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm flex flex-col gap-space-xl">
+<!-- Section 1: Concept Exposition -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-low text-primary flex items-center justify-center font-label-md text-label-md font-bold">01</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Orthogonal Vector Resolution on Inclines</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+              When analyzing rigid bodies accelerating down an inclined surface, computing force vectors along traditional horizontal (<em class="italic">x</em>) and vertical (<em class="italic">y</em>) axes causes simultaneous acceleration along both dimensions. To simplify Newton's second law calculations, we perform a <strong>coordinate rotation</strong>: we orient the chosen <em class="italic">x'</em>-axis strictly parallel to the surface incline, and the <em class="italic">y'</em>-axis orthogonal (perpendicular) to the contact plane.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Under this rotated reference system, perpendicular acceleration collapses to zero (<span class="font-semibold text-primary">a<sub>y'</sub> = 0</span>), meaning all net accelerating dynamics isolate cleanly into the parallel axis (<span class="font-semibold text-primary">a<sub>x'</sub></span>).
+            </p>
+</section>
+<!-- Key Formula Callout Box -->
+<section class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">functions</span>
+                Governing Law • 2D Component Equations
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">SI Units: [N] • [kg·m/s²]</span>
+</div>
+<!-- Mathematical Typography Block -->
+<div class="py-space-md px-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col md:flex-row items-center justify-around gap-space-md text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Parallel Incline Axis</span>
+<span class="font-headline-sm text-headline-sm text-primary tracking-wide font-mono">
+                  Σ F<sub>x</sub> = m · a<sub>x</sub>
+</span>
+<span class="font-label-sm text-label-sm text-secondary mt-1">F<sub>g,∥</sub> − f<sub>k</sub> = m · a<sub>x</sub></span>
+</div>
+<div class="hidden md:block w-px h-12 bg-surface-container-highest"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-space-xs">Perpendicular Axis (Equilibrium)</span>
+<span class="font-headline-sm text-headline-sm text-primary tracking-wide font-mono">
+                  Σ F<sub>y</sub> = m · a<sub>y</sub> = 0
+                </span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container mt-1">F<sub>N</sub> − F<sub>g,⊥</sub> = 0</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">
+              Gravity vector <span class="font-mono text-primary font-semibold">F<sub>g</sub> = m · g</span> decomposes directly into orthogonal components using the ramp angle <span class="font-mono font-semibold text-primary">θ</span>.
+            </p>
+</section>
+<!-- Core Concepts Breakdown -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-low text-primary flex items-center justify-center font-label-md text-label-md font-bold">02</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Strategic Coordinate Rotation Steps</h2>
+</div>
+<ul class="space-y-space-md">
+<li class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-secondary-container/20 text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">explore</span>
+</div>
+<div class="flex flex-col">
+<strong class="font-title-md text-title-md text-primary">Align Coordinate System with Ramp</strong>
+<span class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                    Orient the reference frame such that <span class="font-mono text-primary font-medium">+x</span> points directly down the slope and <span class="font-mono text-primary font-medium">+y</span> points perpendicular outward. This guarantees zero normal acceleration (<span class="font-mono">a<sub>y</sub> = 0</span>).
+                  </span>
+</div>
+</li>
+<li class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-secondary-container/20 text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">call_split</span>
+</div>
+<div class="flex flex-col">
+<strong class="font-title-md text-title-md text-primary">Decompose Gravitational Force Vectors</strong>
+<span class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                    Decompose downward gravity into parallel and orthogonal components relative to the incline surface:
+                  </span>
+<div class="flex flex-wrap items-center gap-space-sm mt-space-sm font-mono text-label-md text-primary">
+<span class="px-space-sm py-1 bg-surface-container-lowest rounded shadow-sm">F<sub>g,∥</sub> = m · g · sin(θ)</span>
+<span class="px-space-sm py-1 bg-surface-container-lowest rounded shadow-sm">F<sub>g,⊥</sub> = m · g · cos(θ)</span>
+</div>
+</div>
+</li>
+<li class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-secondary-container/20 text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">balance</span>
+</div>
+<div class="flex flex-col">
+<strong class="font-title-md text-title-md text-primary">Solve for Normal Force and Kinetic Friction</strong>
+<span class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                    Equilibrium across the perpendicular axis yields <span class="font-mono font-semibold text-primary">F<sub>N</sub> = F<sub>g,⊥</sub> = m · g · cos(θ)</span>. Consequently, kinetic friction simplifies directly to <span class="font-mono font-semibold text-primary">f<sub>k</sub> = μ<sub>k</sub> · F<sub>N</sub> = μ<sub>k</sub> · m · g · cos(θ)</span>.
+                  </span>
+</div>
+</li>
+</ul>
+</section>
+<!-- Interactive Simulator / Dynamic Diagram -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-container-low text-primary flex items-center justify-center font-label-md text-label-md font-bold">03</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Interactive Diagram: Vector Decomposition</h2>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span> Live Model
+              </span>
+</div>
+<!-- Apparatus Visual Shell -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-lg">
+<!-- Vector Canvas Area with inline dynamic SVG -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md flex flex-col items-center justify-center relative min-h-[300px] overflow-hidden shadow-sm">
+<!-- Coordinate Indicator Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-space-xs bg-surface-container-lowest/90 px-space-sm py-1 rounded shadow-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">north_east</span>
+<span>Tilted Frame (x', y')</span>
+</div>
+<!-- Inline Vector Apparatus Diagram SVG -->
+<svg class="w-full max-w-lg h-64 select-none" id="vector-svg" viewbox="0 0 500 280">
+<defs>
+<marker id="arrow-blue" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#00658d"></path>
+</marker>
+<marker id="arrow-green" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#00a858"></path>
+</marker>
+<marker id="arrow-red" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#ba1a1a"></path>
+</marker>
+<marker id="arrow-amber" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#0b2b53"></path>
+</marker>
+</defs>
+<!-- Ground Baseline -->
+<line stroke="#c4c6d0" stroke-dasharray="4 4" stroke-width="2" x1="40" x2="460" y1="240" y2="240"></line>
+<!-- Ramp Wedge (Rotatable in DOM) -->
+<g id="incline-assembly" transform="translate(60, 240)">
+<!-- Ramp Triangle: default 30 deg -->
+<path d="M 0 0 L 360 0 L 0 -180 Z" fill="#eceef0" id="ramp-path"></path>
+<line id="ramp-hypotenuse" stroke="#0b2b53" stroke-width="3" x1="0" x2="360" y1="-180" y2="0"></line>
+<!-- Angle Arc & Text -->
+<path d="M 310 0 A 50 50 0 0 0 317 -25" fill="none" stroke="#00658d" stroke-width="2"></path>
+<text fill="#00658d" font-family="Inter" font-size="13" font-weight="600" id="angle-svg-label" x="290" y="-8">θ = 28°</text>
+<!-- Block on Incline -->
+<!-- Center of block at x=180, y=-90 on surface rotated by ~ -26.5 deg -->
+<g id="block-group" transform="translate(180, -90) rotate(-26.5)">
+<!-- Block Body -->
+<rect fill="#0b2b53" height="35" rx="3" width="70" x="-35" y="-35"></rect>
+<text fill="#ffffff" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="0" y="-14">m = 5.0 kg</text>
+<!-- Normal Force Vector FN (pointing up orthogonal) -->
+<line marker-end="url(#arrow-green)" stroke="#00a858" stroke-width="3" x1="0" x2="0" y1="-35" y2="-90"></line>
+<text fill="#00a858" font-family="Inter" font-size="12" font-weight="600" x="8" y="-75">F<tspan dy="2" font-size="9">N</tspan></text>
+<!-- Friction Vector fk (pointing up parallel incline) -->
+<line marker-end="url(#arrow-red)" stroke="#ba1a1a" stroke-width="2.5" x1="-35" x2="-80" y1="-17.5" y2="-17.5"></line>
+<text fill="#ba1a1a" font-family="Inter" font-size="11" font-weight="600" x="-95" y="-22">f<tspan dy="2" font-size="9">k</tspan></text>
+<!-- Downhill Gravity Parallel Component (Fg ||) -->
+<line marker-end="url(#arrow-blue)" stroke="#00658d" stroke-width="2.5" x1="35" x2="105" y1="-17.5" y2="-17.5"></line>
+<text fill="#00658d" font-family="Inter" font-size="11" font-weight="600" x="80" y="-26">F<tspan dy="2" font-size="9">g,∥</tspan></text>
+<!-- True Gravity Vector Fg (straight down in absolute space) -->
+<!-- Counter-rotated to point strictly down -->
+<g transform="rotate(26.5)">
+<line marker-end="url(#arrow-amber)" stroke="#0b2b53" stroke-width="3" x1="0" x2="0" y1="0" y2="85"></line>
+<text fill="#0b2b53" font-family="Inter" font-size="12" font-weight="700" x="8" y="70">F<tspan dy="2" font-size="9">g</tspan> = mg</text>
+</g>
+</g>
+</g>
+</svg>
+<!-- Live Vector Value Badges -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm w-full pt-space-sm">
+<div class="bg-surface-container-low p-space-xs rounded text-center">
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Incline Angle</span>
+<span class="font-label-md text-label-md font-bold text-primary" id="badge-angle">28°</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded text-center">
+<span class="block font-label-sm text-label-sm text-secondary">F<sub>g,∥</sub> (Downhill)</span>
+<span class="font-label-md text-label-md font-bold text-secondary" id="badge-fg-par">23.0 N</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded text-center">
+<span class="block font-label-sm text-label-sm text-on-tertiary-container">F<sub>N</sub> (Normal)</span>
+<span class="font-label-md text-label-md font-bold text-on-tertiary-container" id="badge-fn">43.3 N</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded text-center">
+<span class="block font-label-sm text-label-sm text-error">Net a<sub>x</sub></span>
+<span class="font-label-md text-label-md font-bold text-error" id="badge-accel">3.12 m/s²</span>
+</div>
+</div>
+</div>
+<!-- Controls Toolbar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<!-- Angle Slider -->
+<div class="flex items-center gap-space-md w-full sm:w-2/3">
+<label class="font-label-md text-label-md text-primary font-semibold whitespace-nowrap" for="angle-slider">
+                    Adjust Angle θ:
+                  </label>
+<input class="w-full accent-secondary-container cursor-pointer" id="angle-slider" max="65" min="10" type="range" value="28"/>
+<span class="font-mono font-bold text-label-md text-primary w-10 text-right" id="slider-val">28°</span>
+</div>
+<!-- Simulation Action Button -->
+<div class="flex items-center gap-space-xs w-full sm:w-auto justify-end">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md transition-colors shadow-sm" id="run-sim-btn">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Run Vector Test</span>
+</button>
+<button class="p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" id="reset-sim-btn" title="Reset angle">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Comprehension Check Card -->
+<section class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">quiz</span>
+                Quick Check 3.2.1
+              </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">+25 XP available</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary">
+              If the incline angle θ increases toward 90°, what occurs to the normal force F<sub>N</sub>?
+            </h3>
+<!-- 2-Option Interactive Assessment -->
+<div class="flex flex-col gap-space-sm" id="quiz-container">
+<button class="quiz-option w-full text-left p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-bright transition-all flex items-start gap-space-md shadow-sm group" data-answer="correct">
+<span class="w-6 h-6 rounded-full bg-surface-container text-primary font-bold font-label-sm text-label-sm flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">A</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">F<sub>N</sub> decreases because cos(θ) approaches 0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">As the ramp gets vertical, the surface supports progressively less weight.</span>
+</div>
+</button>
+<button class="quiz-option w-full text-left p-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-bright transition-all flex items-start gap-space-md shadow-sm group" data-answer="incorrect">
+<span class="w-6 h-6 rounded-full bg-surface-container text-primary font-bold font-label-sm text-label-sm flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">B</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">F<sub>N</sub> increases because sin(θ) approaches 1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">The block slides faster, exerting greater contact pressure against the incline.</span>
+</div>
+</button>
+</div>
+<!-- Quiz feedback alert banner (initially hidden) -->
+<div class="hidden p-space-md rounded-lg font-body-md text-body-md items-center gap-space-sm" id="quiz-feedback"></div>
+</section>
+<!-- Primary Milestone Action Button -->
+<div class="pt-space-md">
+<button class="w-full py-space-md px-space-lg rounded-xl bg-secondary-container hover:bg-secondary text-primary hover:text-on-secondary font-headline-sm text-headline-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-sm group" id="complete-lesson-btn">
+<span>Mark Complete &amp; Continue</span>
+<span class="material-symbols-outlined text-[24px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mt-space-sm px-space-xs">
+<span>Next: Lesson 3.3 Static Friction Thresholds</span>
+<span>Saves progress automatically</span>
+</div>
+</div>
+</div>
+</article>
+<!-- RIGHT COLUMN: AI Learning Support (30% - lg:col-span-4) -->
+<aside class="lg:col-span-4 sticky top-20 flex flex-col gap-space-md">
+<!-- AI Assistant Outer Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md md:p-space-lg shadow-sm flex flex-col h-[calc(100vh-6.5rem)] max-h-[820px]">
+<!-- Assistant Header -->
+<div class="flex items-center justify-between pb-space-md mb-space-sm border-b border-surface-container-highest">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary font-bold leading-tight">AI Study Companion</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+                  Active • Context Aware (Lesson 3.2)
+                </span>
+</div>
+</div>
+<!-- Assistant option menu -->
+<button class="p-space-xs rounded hover:bg-surface-container text-on-surface-variant transition-colors" title="AI Settings">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Chat Conversation Scroll Area -->
+<div class="flex-1 overflow-y-auto space-y-space-md pr-space-xs overscroll-contain" id="chat-stream">
+<!-- User Bubble -->
+<div class="flex flex-col items-end">
+<div class="bg-primary text-on-primary rounded-xl rounded-tr-xs p-space-md max-w-[90%] shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed">
+                  How do I decide whether to use sine or cosine for the gravity component along an incline?
+                </p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 mr-1">10:42 AM</span>
+</div>
+<!-- AI Response Bubble -->
+<div class="flex flex-col items-start">
+<div class="flex items-center gap-space-xs mb-1">
+<div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[12px]">neurology</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Learnova Tutor</span>
+</div>
+<div class="bg-surface-container-lowest text-on-surface rounded-xl rounded-tl-xs p-space-md max-w-[96%] shadow-sm flex flex-col gap-space-sm leading-relaxed">
+<p class="font-body-md text-body-md">
+                  Great question! Remember this simple rule of thumb:
+                </p>
+<ol class="space-y-space-xs font-body-md text-body-md">
+<li class="pl-1">
+<strong>1. When ramp angle θ = 0°</strong> (flat ground), gravity points directly into the surface, so normal force equals full gravity: 
+                    <span class="block font-mono text-label-sm bg-surface-container-low px-2 py-0.5 rounded mt-0.5 text-primary">F<sub>N</sub> = mg · cos(0°) = mg</span>
+</li>
+<li class="pl-1">
+<strong>2. As the ramp gets steeper</strong> (θ → 90°), the sliding force down the ramp increases: 
+                    <span class="block font-mono text-label-sm bg-surface-container-low px-2 py-0.5 rounded mt-0.5 text-primary">F<sub>parallel</sub> = mg · sin(θ)</span>
+</li>
+</ol>
+<div class="mt-space-xs p-space-xs bg-secondary-container/10 rounded-lg">
+<p class="font-label-sm text-label-sm text-on-secondary-fixed">
+                    • Use <strong>sin(θ)</strong> for the downhill parallel force.<br/>
+                    • Use <strong>cos(θ)</strong> for the perpendicular into-the-ramp force.
+                  </p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 ml-1">10:43 AM • Verified Physics Concept</span>
+</div>
+</div>
+<!-- Bottom Area: Quick Action Chips & Input Field -->
+<div class="pt-space-md flex flex-col gap-space-sm border-t border-surface-container-highest mt-space-sm">
+<!-- Quick Action Suggestion Chips -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="quick-chip flex items-center gap-1 bg-surface-container-lowest hover:bg-secondary-fixed text-primary px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm transition-all shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">auto_fix_high</span>
+<span>Simplify this concept</span>
+</button>
+<button class="quick-chip flex items-center gap-1 bg-surface-container-lowest hover:bg-secondary-fixed text-primary px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm transition-all shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">quiz</span>
+<span>Generate practice question</span>
+</button>
+</div>
+<!-- Input Box -->
+<form class="flex items-center gap-space-xs bg-surface-container-lowest rounded-xl p-1.5 shadow-sm" id="ai-chat-form">
+<input class="w-full bg-transparent px-space-sm py-space-xs text-body-md font-body-md text-primary placeholder:text-on-surface-variant focus:outline-none" id="ai-user-input" placeholder="Ask AI Tutor about this lesson..." type="text"/>
+<button class="w-9 h-9 rounded-lg bg-secondary-container hover:bg-secondary text-primary hover:text-on-secondary flex items-center justify-center shrink-0 transition-colors" title="Send query" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm px-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+                Encrypted study context
+              </span>
+<span>Press Enter ↵</span>
+</div>
+</div>
+</div>
+<!-- Micro Focus Streak Widget -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">timer</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary">Session Time: 24m</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Optimal recall threshold: 45m</span>
+</div>
+</div>
+<span class="px-space-sm py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-primary font-mono font-semibold">
+            +50 XP
+          </span>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Interactive Inclined Plane Simulator Logic
+    const slider = document.getElementById('angle-slider');
+    const sliderVal = document.getElementById('slider-val');
+    const badgeAngle = document.getElementById('badge-angle');
+    const badgeFgPar = document.getElementById('badge-fg-par');
+    const badgeFn = document.getElementById('badge-fn');
+    const badgeAccel = document.getElementById('badge-accel');
+    const angleSvgLabel = document.getElementById('angle-svg-label');
+    const blockGroup = document.getElementById('block-group');
+    const runBtn = document.getElementById('run-sim-btn');
+    const resetBtn = document.getElementById('reset-sim-btn');
+
+    const mass = 5.0; // kg
+    const g = 9.81; // m/s^2
+    const mu_k = 0.15; // friction coefficient
+
+    function updateSimulation(angleDeg) {
+      sliderVal.textContent = angleDeg + '°';
+      badgeAngle.textContent = angleDeg + '°';
+      angleSvgLabel.textContent = 'θ = ' + angleDeg + '°';
+
+      const rad = (angleDeg * Math.PI) / 180;
+      const Fg_total = mass * g;
+      const Fg_par = Fg_total * Math.sin(rad);
+      const Fn_val = Fg_total * Math.cos(rad);
+      const fk = mu_k * Fn_val;
+      const netForce = Math.max(0, Fg_par - fk);
+      const accel = netForce / mass;
+
+      badgeFgPar.textContent = Fg_par.toFixed(1) + ' N';
+      badgeFn.textContent = Fn_val.toFixed(1) + ' N';
+      badgeAccel.textContent = accel.toFixed(2) + ' m/s²';
+
+      // Update block rotation transform based on incline angle
+      if (blockGroup) {
+        blockGroup.setAttribute('transform', `translate(180, -90) rotate(${-angleDeg})`);
+      }
+    }
+
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        updateSimulation(parseInt(e.target.value, 10));
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (slider) {
+          slider.value = 28;
+          updateSimulation(28);
+        }
+      });
+    }
+
+    if (runBtn) {
+      runBtn.addEventListener('click', () => {
+        runBtn.classList.add('bg-secondary');
+        const originalText = runBtn.innerHTML;
+        runBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Computing...</span>';
+        setTimeout(() => {
+          runBtn.innerHTML = originalText;
+          runBtn.classList.remove('bg-secondary');
+        }, 600);
+      });
+    }
+
+    // Comprehension Check Quiz
+    const quizOptions = document.querySelectorAll('.quiz-option');
+    const quizFeedback = document.getElementById('quiz-feedback');
+
+    quizOptions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isCorrect = btn.getAttribute('data-answer') === 'correct';
+        quizOptions.forEach(opt => {
+          opt.disabled = true;
+          opt.classList.remove('hover:bg-surface-bright');
+        });
+
+        if (isCorrect) {
+          btn.classList.add('bg-tertiary-container/10', 'text-on-tertiary-container');
+          if (quizFeedback) {
+            quizFeedback.className = 'flex p-space-md rounded-lg font-body-md text-body-md items-center gap-space-sm bg-tertiary-container/15 text-on-tertiary-container';
+            quizFeedback.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><div><strong>Correct!</strong> Since F<sub>N</sub> = mg &middot; cos(&theta;), and cos(90&deg;) = 0, normal contact force vanishes as the ramp approaches vertical. +25 XP credited.</div>';
+            quizFeedback.classList.remove('hidden');
+          }
+        } else {
+          btn.classList.add('bg-error-container/40', 'text-on-error-container');
+          if (quizFeedback) {
+            quizFeedback.className = 'flex p-space-md rounded-lg font-body-md text-body-md items-center gap-space-sm bg-error-container/40 text-on-error-container';
+            quizFeedback.innerHTML = '<span class="material-symbols-outlined text-[20px]">error</span><div><strong>Review needed:</strong> As angle &theta; increases, the surface is no longer under the object to support its weight, meaning normal force drops to 0 at 90&deg;.</div>';
+            quizFeedback.classList.remove('hidden');
+          }
+        }
+      });
+    });
+
+    // AI Study Chat Interaction
+    const chatForm = document.getElementById('ai-chat-form');
+    const userInput = document.getElementById('ai-user-input');
+    const chatStream = document.getElementById('chat-stream');
+    const quickChips = document.querySelectorAll('.quick-chip');
+
+    function appendMessage(text, isUser) {
+      if (!chatStream) return;
+      const wrap = document.createElement('div');
+      wrap.className = isUser ? 'flex flex-col items-end' : 'flex flex-col items-start';
+
+      if (isUser) {
+        wrap.innerHTML = `
+          <div class="bg-primary text-on-primary rounded-xl rounded-tr-xs p-space-md max-w-[90%] shadow-sm">
+            <p class="font-body-md text-body-md leading-relaxed">${text}</p>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant mt-1 mr-1">Just now</span>
+        `;
+      } else {
+        wrap.innerHTML = `
+          <div class="flex items-center gap-space-xs mb-1">
+            <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center text-on-secondary">
+              <span class="material-symbols-outlined text-[12px]">neurology</span>
+            </div>
+            <span class="font-label-sm text-label-sm text-primary font-semibold">Learnova Tutor</span>
+          </div>
+          <div class="bg-surface-container-lowest text-on-surface rounded-xl rounded-tl-xs p-space-md max-w-[96%] shadow-sm flex flex-col gap-space-sm leading-relaxed">
+            <p class="font-body-md text-body-md">${text}</p>
+          </div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant mt-1 ml-1">Just now</span>
+        `;
+      }
+
+      chatStream.appendChild(wrap);
+      chatStream.scrollTop = chatStream.scrollHeight;
+    }
+
+    if (chatForm && userInput) {
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const msg = userInput.value.trim();
+        if (!msg) return;
+        appendMessage(msg, true);
+        userInput.value = '';
+
+        setTimeout(() => {
+          appendMessage(
+            "Analyzing your query regarding Lesson 3.2... Notice how decomposing into tangential and normal axes prevents coupled differential equations. Would you like a step-by-step free-body diagram breakdown for this case?",
+            false
+          );
+        }, 750);
+      });
+    }
+
+    quickChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const prompt = chip.textContent.trim();
+        appendMessage(prompt, true);
+        setTimeout(() => {
+          if (prompt.includes('Simplify')) {
+            appendMessage("<strong>In simple terms:</strong> Gravity pulls straight down. But because the box is on a slide, only a fraction of gravity makes it slide down (sin &theta;), while the rest presses it against the ramp (cos &theta;).", false);
+          } else {
+            appendMessage("<strong>Practice Challenge:</strong> A 10 kg block rests on a 30&deg; incline with &mu;<sub>s</sub> = 0.6. Will the block stay at rest or begin accelerating downhill? (Hint: compute F<sub>g,&parallel;</sub> vs max f<sub>s</sub>)", false);
+          }
+        }, 600);
+      });
+    });
+
+    // Milestone Completion Simulation
+    const completeBtn = document.getElementById('complete-lesson-btn');
+    if (completeBtn) {
+      completeBtn.addEventListener('click', () => {
+        completeBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Saving Lesson Progress...</span>';
+        completeBtn.classList.add('opacity-90');
+        setTimeout(() => {
+          completeBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">task_alt</span><span>Lesson 3.2 Complete! Redirecting...</span>';
+          completeBtn.classList.remove('bg-secondary-container');
+          completeBtn.classList.add('bg-tertiary-fixed-dim', 'text-primary');
+        }, 800);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-highest py-space-lg"><div class="w-full px-gutter flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant"><div class="font-label-md text-label-md">© 2024 Learnova Inc. All rights reserved. Focus &amp; Digital Learning.</div><div class="flex items-center gap-space-lg"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="honor-code" href="#">Honor Code</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="keyboard-shortcuts" href="#">Keyboard Shortcuts</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="support" href="#">Support</a></div></div></footer></body></html>
