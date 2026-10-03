@@ -1,0 +1,23 @@
+{
+  "name": "learnova-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.7.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:students": "npm run dev --workspace=@learnova/students",
+    "dev:teacher": "npm run dev --workspace=@learnova/teacher",
+    "dev:admin": "npm run dev --workspace=@learnova/admin",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check"
+  },
+  "devDependencies": {
+    "turbo": "^2.1.3",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "extends": "@learnova/config/tsconfig.base.json",
+  "include": ["src/**/*"]
+}
