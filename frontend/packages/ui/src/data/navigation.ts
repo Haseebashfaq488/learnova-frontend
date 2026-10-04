@@ -19,6 +19,10 @@ import {
   Zap,
   Sparkles,
   FileText,
+  Search,
+  UserCircle,
+  HelpCircle,
+  Sparkle,
 } from "lucide-react";
 import { BranchedMenuItem } from "../components/branched-menu";
 
@@ -28,15 +32,17 @@ export const studentGlobalNavBranches: BranchedMenuItem[] = [
     label: "Main Workspace",
     children: [
       { value: "hub", label: "Dashboard / Hub", href: "/", icon: Compass },
+      { value: "explore", label: "Explore Catalog", href: "/explore", icon: Search, badge: "New" },
       { value: "courses", label: "My Courses", href: "/courses", icon: BookOpen, badge: 4 },
       { value: "analytics", label: "Progress & Analytics", href: "/analytics", icon: Award, badge: "77%" },
+      { value: "profile", label: "Gamified Profile", href: "/profile", icon: UserCircle, badge: "Lvl 14" },
     ],
   },
   {
     label: "Quick Resume",
     children: [
       { value: "ap-physics-1", label: "AP Physics 1", href: "/courses/ap-physics-1/study", icon: Zap, badge: "Lesson 3.2" },
-      { value: "linear-algebra", label: "Linear Algebra", href: "/courses/linear-algebra/learning-path", icon: Sparkles, badge: "42%" },
+      { value: "linear-algebra", label: "Linear Algebra", href: "/courses/intro-linear-algebra/learning-path", icon: Sparkles, badge: "42%" },
     ],
   },
 ];
@@ -87,6 +93,13 @@ export const getStudentCourseNavBranches = (
         icon: Award,
         badge: "77%",
       },
+      {
+        value: "profile",
+        label: "Gamified Profile",
+        href: "/profile",
+        icon: UserCircle,
+        badge: "Lvl 14",
+      },
     ],
   },
 ];
@@ -100,12 +113,14 @@ export const teacherNavBranches: BranchedMenuItem[] = [
     children: [
       { value: "overview", label: "Cohort Overview", href: "/", icon: LayoutDashboard },
       { value: "curriculum", label: "Curriculum Builder", href: "/curriculum", icon: BookOpenCheck, badge: 18 },
+      { value: "questions", label: "AI Question Studio & Bank", href: "/questions", icon: Sparkles, badge: "AI" },
       { value: "mastery", label: "Student Mastery Grid", href: "/mastery", icon: Target, badge: "3 Alert" },
     ],
   },
   {
     label: "Faculty Resources",
     children: [
+      { value: "profile", label: "Faculty Profile", href: "/profile", icon: UserCircle },
       { value: "grading", label: "Grading Queue", href: "/#grading", icon: CheckCircle2, badge: 5 },
       { value: "analytics", label: "Cohort Analytics", href: "/#analytics", icon: BarChart3 },
     ],

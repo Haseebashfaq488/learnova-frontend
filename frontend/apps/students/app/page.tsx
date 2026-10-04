@@ -34,43 +34,13 @@ import {
   Layers,
   ChevronRight,
   ShieldCheck,
+  Search,
+  PlusCircle,
 } from "lucide-react";
+import { useEnrollment } from "../lib/enrollment-context";
+
 export default function StudentLearningHubPage() {
-  const enrolledCourses = [
-    {
-      id: "course-phys",
-      title: "AP Physics 1: Mechanics & Dynamics",
-      instructor: "Dr. Sarah Mitchell",
-      progress: 74,
-      totalLessons: 18,
-      completedLessons: 13,
-      category: "Physics & STEM",
-      thumbnail: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=600&auto=format&fit=crop&q=80",
-      tag: "Core Focus",
-    },
-    {
-      id: "course-next",
-      title: "Advanced Full-Stack Architecture with AI",
-      instructor: "Prof. Alan Chen",
-      progress: 68,
-      totalLessons: 24,
-      completedLessons: 16,
-      category: "Engineering",
-      thumbnail: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=80",
-      tag: "Elective",
-    },
-    {
-      id: "course-design",
-      title: "Modern Design Systems Engineering",
-      instructor: "Alex Rivera",
-      progress: 42,
-      totalLessons: 18,
-      completedLessons: 8,
-      category: "UI/UX Design",
-      thumbnail: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format&fit=crop&q=80",
-      tag: "In Review",
-    },
-  ];
+  const { enrolledCourses } = useEnrollment();
 
   const dailySchedule = [
     { time: "09:00 AM", title: "Mechanics 2D Force Equilibrium Lab", type: "Lab Simulation", done: true },
@@ -292,48 +262,59 @@ export default function StudentLearningHubPage() {
             {/* Courses Overview (8 cols) */}
             <div className="lg:col-span-8 space-y-4" id="courses">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold text-[#0B2B53]">Enrolled Learning Courses</h3>
-                <Link href="/courses" className="text-xs font-bold text-[#00A8E8] hover:underline flex items-center gap-1">
-                  <span>View All (4)</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-[#0B2B53]">Enrolled Learning Courses</h3>
+                  <span className="px-2 py-0.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold">
+                    {enrolledCourses.length}
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Link href="/explore" className="text-xs font-bold text-[#00A8E8] hover:text-sky-600 flex items-center gap-1">
+                    <Search className="h-3.5 w-3.5" />
+                    <span>Explore Catalog</span>
+                  </Link>
+                  <Link href="/courses" className="text-xs font-bold text-slate-500 hover:text-[#0B2B53] flex items-center gap-1">
+                    <span>View All</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {enrolledCourses.map((course) => (
+                {enrolledCourses.slice(0, 6).map((course) => (
                   <Link
                     key={course.id}
-                    href={course.id === "course-phys" ? "/courses/ap-physics-1" : "/courses"}
+                    href={course.pathSlug || `/courses/${course.id}/learning-path`}
                     className="block group"
                   >
                     <Card className="overflow-hidden border-slate-200 group-hover:border-sky-300 group-hover:shadow-md transition-all flex flex-col justify-between h-full">
                       <div className="relative h-28 w-full bg-slate-200">
                         <img
-                          src={course.thumbnail}
+                          src={course.thumbnailUrl}
                           alt={course.title}
                           className="h-full w-full object-cover group-hover:scale-102 transition-transform duration-300"
                         />
                         <Badge className="absolute top-2 left-2 bg-[#0B2B53]/90 text-white text-[10px]">
-                          {course.tag}
+                          {course.category}
                         </Badge>
                       </div>
                       <CardHeader className="p-4 pb-2">
-                        <span className="text-[11px] font-semibold text-sky-600 uppercase tracking-wide">
-                          {course.category}
+                        <span className="text-[10px] font-bold text-sky-600 uppercase tracking-wide truncate">
+                          {course.subtitle || course.category}
                         </span>
-                        <CardTitle className="text-sm font-bold text-[#0B2B53] group-hover:text-[#00A8E8] transition-colors line-clamp-2 mt-1">
+                        <CardTitle className="text-xs sm:text-sm font-bold text-[#0B2B53] group-hover:text-[#00A8E8] transition-colors line-clamp-2 mt-0.5">
                           {course.title}
                         </CardTitle>
-                        <CardDescription className="text-xs text-slate-500 mt-1">
-                          {course.instructor}
+                        <CardDescription className="text-[11px] text-slate-500 mt-1 truncate">
+                          {course.highlightTopic || course.unitStatusText}
                         </CardDescription>
                       </CardHeader>
                       <CardFooter className="p-4 pt-2 flex flex-col gap-2 border-t border-slate-100">
                         <div className="w-full flex items-center justify-between text-xs">
                           <span className="text-slate-500">{course.completedLessons}/{course.totalLessons} lessons</span>
-                          <span className="font-bold text-[#0B2B53]">{course.progress}%</span>
+                          <span className="font-bold text-[#0B2B53]">{course.completedPercent}%</span>
                         </div>
-                        <Progress value={course.progress} className="h-1.5" />
+                        <Progress value={course.completedPercent} className="h-1.5" />
                       </CardFooter>
                     </Card>
                   </Link>

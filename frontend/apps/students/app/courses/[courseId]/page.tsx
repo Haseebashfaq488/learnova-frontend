@@ -26,14 +26,34 @@ import {
   Award,
   BookOpen,
 } from "lucide-react";
+import { useEnrollment } from "@/lib/enrollment-context";
+import { EnrolledCourseCardData, CatalogCourse } from "@learnova/types";
 
 export default function CourseOverviewPage() {
   const params = useParams();
   const courseId = (params?.courseId as string) || "ap-physics-1";
+  const { enrolledCourses, catalogCourses } = useEnrollment();
 
-  const course =
-    mockEnrolledCoursesHub.find((c) => c.id === courseId) ||
-    mockEnrolledCoursesHub[0];
+  const enrolledCourse = enrolledCourses.find((c: EnrolledCourseCardData) => c.id === courseId);
+  const catalogCourse = catalogCourses.find((c: CatalogCourse) => c.id === courseId);
+
+  const course = enrolledCourse || (catalogCourse ? {
+    id: catalogCourse.id,
+    title: catalogCourse.title,
+    subtitle: catalogCourse.subtitle,
+    category: catalogCourse.category,
+    status: "in-progress" as const,
+    unitStatusText: `Unit 1 of ${catalogCourse.syllabus.length}`,
+    thumbnailUrl: catalogCourse.thumbnailUrl,
+    thumbnailAlt: catalogCourse.thumbnailAlt,
+    highlightTopic: catalogCourse.syllabus[0]?.title || catalogCourse.tags[0],
+    completedPercent: 0,
+    completedLessons: 0,
+    totalLessons: catalogCourse.totalLessons,
+    interactiveLabsCount: catalogCourse.interactiveLabsCount,
+    durationWeeklyRemaining: `${Math.round(catalogCourse.durationHours / 4)} hrs remaining`,
+    pathSlug: `/courses/${catalogCourse.id}/learning-path`,
+  } : mockEnrolledCoursesHub[0]);
 
   const courseBranches = getStudentCourseNavBranches(courseId, course.title);
 

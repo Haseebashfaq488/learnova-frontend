@@ -124,6 +124,52 @@ export interface PlatformStat {
    Stitch Educational Platform Specific Types
    ========================================================================== */
 
+export interface LessonResource {
+  id: string;
+  title: string;
+  type: 'pdf' | 'video' | 'simulation' | 'slide' | 'link' | 'worksheet';
+  url: string;
+  size?: string;
+  uploadedAt: string;
+  description?: string;
+}
+
+export interface LessonAssessmentConfig {
+  id: string;
+  title: string;
+  type: 'concept-check' | 'mastery-quiz' | 'lab-rubric' | 'homework';
+  totalPoints: number;
+  xpBounty: number;
+  timeLimitMinutes?: number;
+  passingScorePercent: number;
+  questions: QuestionBankItem[];
+  instructions?: string;
+}
+
+export interface LessonDetailData {
+  id: string;
+  unitId: string;
+  unitTitle: string;
+  courseCode: string;
+  courseName: string;
+  title: string;
+  duration: string;
+  type: 'Video Lecture' | 'Hands-on Lab' | 'Concept Check' | 'Peer Review' | 'Quiz';
+  isPublished: boolean;
+  hasAssessment: boolean;
+  learningObjectives: string[];
+  lectureNotesMarkdown: string;
+  videoUrl?: string;
+  resources: LessonResource[];
+  assessment?: LessonAssessmentConfig;
+  studentStats?: {
+    completionRate: number;
+    averageScore: number;
+    totalSubmissions: number;
+    interventionCount: number;
+  };
+}
+
 export interface CurriculumTopicLesson {
   id: string;
   title: string;
@@ -316,4 +362,236 @@ export interface InclineSimulationState {
   normalForce: number; // m * g * cos(theta)
   fk: number; // mu * FN
   netAcceleration: number; // (Fg,|| - fk) / m
+}
+
+export interface CourseCatalogSyllabusUnit {
+  unitNumber: number;
+  title: string;
+  description: string;
+  lessonsCount: number;
+  durationHours: number;
+  keyTopics: string[];
+}
+
+export interface CatalogCourse {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  category: string;
+  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'AP Prep';
+  durationHours: number;
+  totalLessons: number;
+  interactiveLabsCount: number;
+  rating: number;
+  reviewsCount: number;
+  enrolledCount: number;
+  thumbnailUrl: string;
+  thumbnailAlt: string;
+  instructor: {
+    name: string;
+    role: string;
+    avatarUrl: string;
+    organization: string;
+  };
+  tags: string[];
+  learningOutcomes: string[];
+  syllabus: CourseCatalogSyllabusUnit[];
+  prerequisites?: string[];
+  isFeatured?: boolean;
+  isPopular?: boolean;
+}
+
+/* ==========================================================================
+   Gamification Profile Types
+   ========================================================================== */
+
+export type BadgeRarity = 'Common' | 'Rare' | 'Epic' | 'Legendary';
+export type BadgeCategory = 'Mastery' | 'Consistency' | 'Curiosity' | 'Speed' | 'AI Collaboration';
+
+export interface GamificationBadge {
+  id: string;
+  name: string;
+  description: string;
+  category: BadgeCategory;
+  rarity: BadgeRarity;
+  icon: string;
+  xpReward: number;
+  isUnlocked: boolean;
+  unlockedAt?: string;
+  progressPercent?: number;
+  criteria: string;
+}
+
+export interface DailyQuest {
+  id: string;
+  title: string;
+  description: string;
+  xpReward: number;
+  currentProgress: number;
+  targetProgress: number;
+  unit: string;
+  isCompleted: boolean;
+  isClaimed: boolean;
+  iconName: string;
+  expiresIn: string;
+}
+
+export interface XpActivityLog {
+  id: string;
+  activityTitle: string;
+  courseTitle: string;
+  xpEarned: number;
+  timestamp: string;
+  type: 'quiz' | 'simulation' | 'streak' | 'ai_chat' | 'milestone';
+}
+
+export interface CohortLeaderboardEntry {
+  rank: number;
+  studentId: string;
+  name: string;
+  avatarUrl: string;
+  tier: 'Bronze' | 'Silver' | 'Gold' | 'Platinum' | 'Diamond';
+  totalPoints: number;
+  streakDays: number;
+  level: number;
+  weeklyXp: number;
+  isCurrentUser?: boolean;
+}
+
+export interface StudentGamificationState {
+  level: number;
+  levelTitle: string;
+  currentXp: number;
+  nextLevelXp: number;
+  tier: 'Bronze' | 'Silver' | 'Gold' | 'Platinum' | 'Diamond';
+  totalPoints: number;
+  streakDays: number;
+  longestStreak: number;
+  rankInCohort: number;
+  totalCohortStudents: number;
+  weeklyXp: number;
+  dailyQuests: DailyQuest[];
+  badges: GamificationBadge[];
+  recentActivities: XpActivityLog[];
+  leaderboard: CohortLeaderboardEntry[];
+}
+
+/* ==========================================================================
+   Teacher Faculty Profile Types
+   ========================================================================== */
+
+export interface FacultyBadge {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  awardedYear: string;
+}
+
+export interface FacultyImpactStats {
+  totalStudentsTaught: number;
+  activeCohortsCount: number;
+  averageMasteryRate: number;
+  questionsCuratedCount: number;
+  assignmentsGradedCount: number;
+  officeHoursHeldHours: number;
+  studentSatisfactionRating: number;
+}
+
+export interface TeacherCohortSummary {
+  id: string;
+  courseName: string;
+  courseCode: string;
+  cohortName: string;
+  studentCount: number;
+  averageMastery: number;
+  completionRate: number;
+  interventionsNeeded: number;
+  schedule: string;
+}
+
+export interface TeacherAIAssistantConfig {
+  preferredPersona: 'Socratic Tutor' | 'Rigorous Examiner' | 'Conceptual Guide' | 'Practical Mentor';
+  defaultBloomsLevel: BloomsTaxonomy;
+  defaultDifficultyDistribution: {
+    foundation: number;
+    intermediate: number;
+    advanced: number;
+  };
+  autoGenerateStepByStepSolutions: boolean;
+  highlightCommonMisconceptions: boolean;
+  exportFormatDefault: 'Canvas QTI' | 'PDF Printable' | 'Moodle XML' | 'JSON Standard';
+}
+
+/* ==========================================================================
+   AI Question Generation & Question Bank Types
+   ========================================================================== */
+
+export type BloomsTaxonomy =
+  | 'Knowledge'
+  | 'Comprehension'
+  | 'Application'
+  | 'Analysis'
+  | 'Evaluation'
+  | 'Synthesis';
+
+export type QuestionType =
+  | 'multiple-choice'
+  | 'multi-select'
+  | 'numerical'
+  | 'conceptual-short'
+  | 'step-by-step';
+
+export type QuestionDifficulty = 'Foundation' | 'Intermediate' | 'Advanced' | 'Olympiad';
+
+export interface QuestionOptionItem {
+  id: string;
+  label: string; // 'A' | 'B' | 'C' | 'D' | 'E'
+  text: string;
+  isCorrect: boolean;
+  distractorRationale?: string;
+}
+
+export interface QuestionBankItem {
+  id: string;
+  courseId: string;
+  courseTitle: string;
+  unitId?: string;
+  unitTitle?: string;
+  topic: string;
+  subtopic: string;
+  type: QuestionType;
+  difficulty: QuestionDifficulty;
+  bloomsLevel: BloomsTaxonomy;
+  prompt: string;
+  latexFormula?: string;
+  options?: QuestionOptionItem[];
+  sampleAnswer?: string;
+  stepByStepSolution: string[];
+  hint: string;
+  commonMisconception?: string;
+  tags: string[];
+  status: 'draft' | 'approved' | 'archived';
+  createdAt: string;
+  approvedAt?: string;
+  usageCount: number;
+  avgStudentAccuracy?: number;
+}
+
+export interface AIGenerationPromptConfig {
+  courseId: string;
+  courseTitle: string;
+  unitId?: string;
+  unitTitle?: string;
+  topic: string;
+  subtopic: string;
+  questionTypes: QuestionType[];
+  difficulty: QuestionDifficulty;
+  bloomsLevel: BloomsTaxonomy;
+  count: number;
+  customPedagogyGuidance?: string;
+  includeStepByStepSolutions: boolean;
+  includeMisconceptionDiagnostics: boolean;
 }

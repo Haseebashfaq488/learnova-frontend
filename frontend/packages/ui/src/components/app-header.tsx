@@ -99,17 +99,24 @@ export function AppHeader({
         </button>
 
         {/* User Avatar */}
-        <div className="flex items-center gap-3 pl-2 border-l border-slate-200 dark:border-slate-800">
-          <Avatar name={userName} src={avatarUrl} size="sm" />
+        <a
+          href="/profile"
+          className="flex items-center gap-3 pl-2 border-l border-slate-200 dark:border-slate-800 group hover:opacity-90 transition-opacity"
+          title="View Gamified Profile"
+        >
+          <div className="relative">
+            <Avatar name={userName} src={avatarUrl} size="sm" />
+            <span className="absolute -bottom-0.5 -right-0.5 flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-white dark:ring-slate-900" />
+          </div>
           <div className="hidden text-left sm:block">
-            <p className="text-xs font-semibold text-slate-900 dark:text-white leading-tight">
+            <p className="text-xs font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-sky-600 transition-colors">
               {userName}
             </p>
             <p className="text-[11px] text-slate-500 dark:text-slate-400 capitalize">
               {userRole}
             </p>
           </div>
-        </div>
+        </a>
       </div>
     </header>
   );

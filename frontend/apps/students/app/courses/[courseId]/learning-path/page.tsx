@@ -31,26 +31,81 @@ import {
   BookOpen,
   Route,
 } from "lucide-react";
+import { useEnrollment } from "@/lib/enrollment-context";
+import { LearningPathUnitMilestone, EnrolledCourseCardData, CatalogCourse, CourseCatalogSyllabusUnit } from "@learnova/types";
 
 export default function CourseLearningPathPage() {
   const params = useParams();
   const courseId = (params?.courseId as string) || "ap-physics-1";
+  const { enrolledCourses, catalogCourses } = useEnrollment();
 
-  const course =
-    mockEnrolledCoursesHub.find((c) => c.id === courseId) ||
-    mockEnrolledCoursesHub[0];
+  const enrolledCourse = enrolledCourses.find((c: EnrolledCourseCardData) => c.id === courseId);
+  const catalogCourse = catalogCourses.find((c: CatalogCourse) => c.id === courseId);
+
+  const course = enrolledCourse || (catalogCourse ? {
+    id: catalogCourse.id,
+    title: catalogCourse.title,
+    subtitle: catalogCourse.subtitle,
+    category: catalogCourse.category,
+    status: "in-progress" as const,
+    unitStatusText: `Unit 1 of ${catalogCourse.syllabus.length}`,
+    thumbnailUrl: catalogCourse.thumbnailUrl,
+    thumbnailAlt: catalogCourse.thumbnailAlt,
+    highlightTopic: catalogCourse.syllabus[0]?.title || catalogCourse.tags[0],
+    completedPercent: 0,
+    completedLessons: 0,
+    totalLessons: catalogCourse.totalLessons,
+    interactiveLabsCount: catalogCourse.interactiveLabsCount,
+    durationWeeklyRemaining: `${Math.round(catalogCourse.durationHours / 4)} hrs remaining`,
+    pathSlug: `/courses/${catalogCourse.id}/learning-path`,
+  } : mockEnrolledCoursesHub[0]);
 
   const courseBranches = getStudentCourseNavBranches(courseId, course.title);
 
-  const [learningPath, setLearningPath] = useState(mockAPPhysicsLearningPath);
+  const initialLearningPath: LearningPathUnitMilestone[] = React.useMemo(() => {
+    if (courseId === "ap-physics-1") {
+      return mockAPPhysicsLearningPath;
+    }
+    if (catalogCourse && catalogCourse.syllabus) {
+      return catalogCourse.syllabus.map((s: CourseCatalogSyllabusUnit, idx: number) => ({
+        id: `unit-${s.unitNumber}`,
+        unitNumber: s.unitNumber,
+        title: s.title,
+        description: s.description,
+        status: (idx === 0 ? "in-progress" : "locked") as 'completed' | 'in-progress' | 'locked',
+        completionPercent: idx === 0 ? 25 : 0,
+        lessonsCount: s.lessonsCount,
+        labsCount: Math.max(1, Math.floor(s.lessonsCount / 3)),
+        estimatedHours: s.durationHours,
+        learningObjectives: `Master key concepts: ${s.keyTopics.join(", ")}.`,
+        lessons: s.keyTopics.map((topic: string, tIdx: number) => ({
+          id: `lp-${s.unitNumber}-${tIdx + 1}`,
+          lessonNumber: `${s.unitNumber}.${tIdx + 1}`,
+          title: topic,
+          duration: `${Math.round((s.durationHours / Math.max(1, s.keyTopics.length)) * 50)} min`,
+          type: (tIdx === 0 ? "Video Lecture" : tIdx === 1 ? "Core Theory" : "Lab Simulation") as 'Video Lecture' | 'Core Theory' | 'Lab Simulation',
+          isCompleted: idx === 0 && tIdx === 0,
+          isActive: idx === 0 && tIdx === 1,
+          score: idx === 0 && tIdx === 0 ? 100 : undefined,
+        })),
+      }));
+    }
+    return mockAPPhysicsLearningPath;
+  }, [courseId, catalogCourse]);
+
+  const [learningPath, setLearningPath] = useState(initialLearningPath);
   const [expandedUnits, setExpandedUnits] = useState<Record<string, boolean>>({
-    "unit-1": false,
+    "unit-1": true,
     "unit-2": false,
     "unit-3": true,
     "unit-4": false,
     "unit-5": false,
     "unit-6": false,
   });
+
+  React.useEffect(() => {
+    setLearningPath(initialLearningPath);
+  }, [initialLearningPath]);
 
   const toggleUnit = (unitId: string) => {
     setExpandedUnits((prev) => ({
