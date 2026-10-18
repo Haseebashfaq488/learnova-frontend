@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-active: 'Fraunces', Georgia, serif;
+    --bm-w: 240px;
+    --bm-ink: #2B241F;
+    --bm-accent: #8C5835;
+    --bm-line: rgba(140, 88, 53, 0.22);
+    --bm-font: 13px;
+    --bm-row: 38px;
+    --bm-indent: 38px;
+    --bm-line-w: 1.75;
+    --bm-draw: 350ms;
+    --bm-fold: 250ms;
+    --bm-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --bm-muted: #64748B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-active);
+  }
+  
+  body {
+    font-family: var(--font-active);
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, a, button, input {
+    font-family: inherit;
+  }
+}
+
+/* Glassmorphism utilities */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+/* Subtle grid background */
+.bg-subtle-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
+}
+
