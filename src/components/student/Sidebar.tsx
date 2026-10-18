@@ -41,18 +41,18 @@ export function Sidebar({ className = '', width = 240 }: SidebarProps) {
           icon: Compass,
         },
         {
+          value: 'courses',
+          label: 'My Enrolled Courses',
+          href: '/dashboard/courses',
+          icon: BookOpen,
+          badge: '2 Active',
+        },
+        {
           value: 'practice',
           label: 'Practice Arena',
           href: '/dashboard/practice',
           icon: Play,
           badge: 'Daily',
-        },
-        {
-          value: 'analytics',
-          label: 'Competency Radar',
-          href: '/dashboard/analytics',
-          icon: Award,
-          badge: '82%',
         },
         {
           value: 'study',
@@ -76,14 +76,14 @@ export function Sidebar({ className = '', width = 240 }: SidebarProps) {
         {
           value: 'cs101',
           label: 'CS 101: Systems',
-          href: '/courses/cs101-computer-systems',
+          href: '/dashboard/courses/foundations-of-computer-science',
           icon: Zap,
           badge: 'Unit 3',
         },
         {
           value: 'cs201',
           label: 'CS 201: Algorithms',
-          href: '/courses/cs201-data-structures-algorithms',
+          href: '/dashboard/courses/data-structures-and-call-stack',
           icon: Sparkles,
           badge: '42%',
         },

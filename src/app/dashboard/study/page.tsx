@@ -13,6 +13,7 @@ import {
   Cpu,
   Layers,
   ArrowRight,
+  ArrowLeft,
   Code2,
   HelpCircle,
   Lightbulb,
@@ -105,8 +106,16 @@ export default function StudyRoomPage() {
 
         <div className="flex items-center gap-2.5">
           <Link
-            href="/dashboard/practice"
+            href="/dashboard/courses/foundations-of-computer-science"
             className="py-2 px-3.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Course Learning Path</span>
+          </Link>
+          <Link
+            href="/dashboard/practice"
+            className="py-2 px-3.5 rounded-xl text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5"
+            style={{ backgroundColor: palette.accent }}
           >
             <span>Practice Checkpoint</span>
             <ArrowRight className="w-3.5 h-3.5" />

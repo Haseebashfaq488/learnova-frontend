@@ -141,12 +141,12 @@ export function AppHeader({
               </Link>
 
               <Link
-                href="/dashboard/analytics"
+                href="/dashboard/courses"
                 onClick={() => setProfileDropdownOpen(false)}
                 className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
               >
-                <Zap className="h-4 w-4 text-sky-500" />
-                <span>Competency Radar</span>
+                <BookOpen className="h-4 w-4 text-sky-500" />
+                <span>My Enrolled Courses</span>
               </Link>
 
               <Link

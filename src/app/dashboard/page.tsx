@@ -230,42 +230,42 @@ export default function StudentDashboardPage() {
           </div>
         </div>
 
-        {/* Competency Radar Quick Card (4 cols) */}
+        {/* Active Learning Path Tracker Card (4 cols) */}
         <div
           className="lg:col-span-4 rounded-3xl p-6 text-white flex flex-col justify-between shadow-sm relative overflow-hidden"
           style={{ backgroundColor: palette.textPrimary }}
         >
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs font-bold text-amber-300 uppercase tracking-wider">
-              <ShieldCheck className="h-4 w-4" />
-              <span>Competency Pulse</span>
+              <Route className="h-4 w-4" />
+              <span>Active Learning Path</span>
             </div>
             <h3 className="text-lg sm:text-xl font-bold">
-              Systems Readiness: 82%
+              CS 101: Procedural Logic
             </h3>
             <p className="text-xs text-white/80 leading-relaxed">
-              Hardware Architecture &amp; Data Structures are at mastery level. Operating Systems &amp; VM have 1 checkpoint remaining.
+              Unit 3: Iteration &amp; Loop Invariants. 3 lessons completed, 1 calibrated checkpoint ready.
             </p>
           </div>
 
           <div className="pt-6 space-y-3">
             <div className="flex items-center justify-between text-xs text-white/90">
-              <span>Overall Mastery Index</span>
-              <span className="font-bold text-emerald-300">82.4%</span>
+              <span>Topic Mastery Progress</span>
+              <span className="font-bold text-emerald-300">75% Complete</span>
             </div>
             <div className="w-full h-2 rounded-full bg-white/20 overflow-hidden">
               <div
                 className="h-full rounded-full bg-emerald-400"
-                style={{ width: '82%' }}
+                style={{ width: '75%' }}
               />
             </div>
 
             <Link
-              href="/dashboard/analytics"
+              href="/dashboard/courses/foundations-of-computer-science"
               className="w-full mt-2 py-2.5 px-4 rounded-xl text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md"
               style={{ backgroundColor: palette.accent }}
             >
-              <span>View Full Competency Radar</span>
+              <span>Resume Learning Path</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
@@ -284,14 +284,16 @@ export default function StudentDashboardPage() {
             </p>
           </div>
 
-          <Link
-            href="/courses"
-            className="text-xs font-bold flex items-center gap-1 hover:underline"
-            style={{ color: palette.accent }}
-          >
-            <span>Browse All Courses</span>
-            <ChevronRight className="h-3.5 w-3.5" />
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/dashboard/courses"
+              className="text-xs font-bold flex items-center gap-1 hover:underline"
+              style={{ color: palette.accent }}
+            >
+              <span>View All Enrolled ({enrolledCourses.length})</span>
+              <ChevronRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -337,11 +339,11 @@ export default function StudentDashboardPage() {
                 </div>
 
                 <Link
-                  href={`/courses/${course.slug}`}
+                  href={`/dashboard/courses/${course.slug}`}
                   className="px-3.5 py-1.5 rounded-xl text-xs font-bold text-white transition-all shadow-xs flex items-center gap-1.5"
                   style={{ backgroundColor: palette.accent }}
                 >
-                  <span>Resume</span>
+                  <span>Resume Path</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
